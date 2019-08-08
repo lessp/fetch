@@ -1,0 +1,10 @@
+(executables
+  (names http_get http_post http_put http_delete http_other)
+  (libraries 
+   uri 
+   console.lib 
+   fetch
+   repromise
+   )
+)
+

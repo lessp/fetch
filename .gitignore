@@ -1,0 +1,11 @@
+.vscode
+.DS_Store
+.env
+.merlin
+node_modules/
+_build
+_esy
+_release
+*.byte
+*.native
+*.install
