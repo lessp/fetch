@@ -1,5 +1,8 @@
 (executables
-  (names http_get http_post http_put http_delete http_other)
+  (names 
+    http_lwt_get
+    http_repromise_get
+  )
   (libraries 
    uri 
    console.lib 

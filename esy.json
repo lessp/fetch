@@ -4,9 +4,6 @@
   "esy": {
     "build": "dune build -p fetch"
   },
-  "scripts": {
-    "example": "esy dune exec examples/native/http_get.exe"
-  },
   "dependencies": {
     "@reason-native/console": "*",
     "@opam/uri": "*",
