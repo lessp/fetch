@@ -40,8 +40,6 @@ module Response: {
   module Body: {
     type t;
 
-    let make: t => t;
-
     let toString: t => string;
     let ofString: string => t;
   };
