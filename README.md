@@ -1,5 +1,31 @@
 # Fetch
 
+TODO: [TODO.md](./TODO.md)
+
+## How to use
+
+e.g.
+
+```reason
+module F = Fetch.Cohttp.Lwt;
+
+Fetch.(
+  F.fetch("http://httpbin.org/get")
+  |> Lwt.map(
+       fun
+       | Ok({Response.body, Response.status, _}) =>
+         Printf.printf(
+           "Status: %d
+            Body: %s",
+           Response.Status.toCode(status),
+           Response.Body.toString(body),
+         )
+       | Error(_) => Printf.printf("That's an error"),
+     )
+  |> Lwt_main.run
+);
+```
+
 ## What?
 
 Fetch aims to provide a common interface over different HTTP and Promise-implementations in the ReasonML/OCaml ecosystem.
