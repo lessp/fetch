@@ -1,16 +1,16 @@
 # Fetch
 
-TODO: [TODO.md](./TODO.md)
+A fetch library for ReasonML/OCaml.
 
 ## How to use
 
 e.g.
 
 ```reason
-module F = Fetch.Cohttp.Lwt;
+module Fetch = Fetch_lwt;
 
 Fetch.(
-  F.fetch("http://httpbin.org/get")
+  fetch("http://httpbin.org/get", ())
   |> Lwt.map(
        fun
        | Ok({Response.body, Response.status, _}) =>
@@ -49,9 +49,6 @@ module Fetch = Fetch.Make({
   type t = Promise.t(result(Response.t, exn));
 
   let make = (req: Request.t) => /* your custom implementation */
-
-  let fetch = (~body=?, ~headers=[], ~meth=`GET, url) =>
-        Request.create(~body, ~headers, ~meth, ~url) |> make;
 });
 ```
 
