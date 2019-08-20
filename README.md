@@ -2,6 +2,10 @@
 
 A fetch library for ReasonML/OCaml.
 
+**TODO:**
+
+- [ ] Implement a functor for the Response and its functions
+
 ## How to use
 
 e.g.
