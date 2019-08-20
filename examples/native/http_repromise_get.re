@@ -1,6 +1,6 @@
 module F = Fetch.Cohttp.Repromise;
 
-F.fetch("http://httpbin.org/get")
+F.fetch("http://httpbin.org/get", ())
 |> Repromise.wait(
      fun
      | Ok({Fetch.Response.body, Fetch.Response.status, _}) =>

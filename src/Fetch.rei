@@ -162,7 +162,8 @@ module type Sig = {
       ~body: string=?,
       ~headers: list(Headers.t)=?,
       ~meth: Method.t=?,
-      string
+      string,
+      unit
     ) =>
     t;
 };
@@ -177,7 +178,8 @@ module Make:
         ~body: string=?,
         ~headers: list(Headers.t)=?,
         ~meth: Method.t=?,
-        string
+        string,
+        unit
       ) =>
       t;
   };
@@ -191,7 +193,8 @@ module Cohttp: {
         ~body: string=?,
         ~headers: list(Headers.t)=?,
         ~meth: Method.t=?,
-        string
+        string,
+        unit
       ) =>
       t;
   };
@@ -204,7 +207,8 @@ module Cohttp: {
         ~body: string=?,
         ~headers: list(Headers.t)=?,
         ~meth: Method.t=?,
-        string
+        string,
+        unit
       ) =>
       t;
   };

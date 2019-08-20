@@ -13,7 +13,8 @@ module type Sig = {
       ~body: string=?,
       ~headers: list(Headers.t)=?,
       ~meth: Method.t=?,
-      string
+      string,
+      unit
     ) =>
     t;
 };
@@ -23,7 +24,7 @@ module Make = (R: Sig) : (Sig with type t = R.t) => {
 
   let make = R.make;
 
-  let fetch = (~body=?, ~headers=[], ~meth=`GET, url) =>
+  let fetch = (~body=?, ~headers=[], ~meth=`GET, url, ()) =>
     Request.create(~body, ~headers, ~meth, ~url) |> make;
 };
 
@@ -68,7 +69,7 @@ module Cohttp = {
         body;
       };
 
-      let fetch = (~body=?, ~headers=[], ~meth=`GET, url) =>
+      let fetch = (~body=?, ~headers=[], ~meth=`GET, url, ()) =>
         Request.create(~body, ~headers, ~meth, ~url) |> make;
     });
 
@@ -108,7 +109,7 @@ module Cohttp = {
         }
         |> Repromise_lwt.lwtToRepromise;
 
-      let fetch = (~body=?, ~headers=[], ~meth=`GET, url) =>
+      let fetch = (~body=?, ~headers=[], ~meth=`GET, url, ()) =>
         Request.create(~body, ~headers, ~meth, ~url) |> make;
     });
 };

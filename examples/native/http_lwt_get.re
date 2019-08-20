@@ -1,6 +1,6 @@
 module F = Fetch.Cohttp.Lwt;
 
-F.fetch("http://httpbin.org/get")
+F.fetch("http://httpbin.org/get", ())
 |> Lwt.map(
      fun
      | Ok({Fetch.Response.body, Fetch.Response.status, _}) =>
