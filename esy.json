@@ -1,28 +1,30 @@
 {
   "name": "fetch",
-  "version": "1.0.0",
-  "esy": {
-    "build": "dune build -p fetch"
-  },
+  "version": "0.1.0",
+  "description": "A fetch library for ReasonML/OCaml",
+  "license": "MIT",
+  "esy": { "build": "dune build -p fetch" },
   "dependencies": {
-    "@reason-native/console": "*",
-    "@opam/uri": "*",
-    "@opam/lwt": "*",
-    "@opam/lwt_ppx": "*",
     "@opam/cohttp": "*",
     "@opam/cohttp-lwt-unix": "*",
     "@opam/dune": "*",
-    "@opam/reason": "3.5.0",
-    "ocaml": "4.7.1000",
-    "@opam/repromise_lwt": "*",
-    "@opam/merlin": "*",
+    "@opam/lwt": "*",
+    "@opam/lwt_ppx": "*",
     "@opam/lwt_ssl": "*",
+    "@opam/merlin": "*",
+    "@opam/reason": "3.5.0",
+    "@opam/repromise_lwt": "*",
     "@opam/ssl": ">= 0.5.8",
-    "@opam/tls": "*"
+    "@opam/tls": "*",
+    "@opam/uri": "*",
+    "@reason-native/console": "*",
+    "ocaml": "4.7.1000",
+    "refmterr": "^3.2.2"
   },
+  "devDependencies": { "@opam/merlin": "*" },
   "resolutions": {
     "@opam/repromise": "github:aantron/repromise:repromise.opam#08030c5",
     "@opam/repromise_lwt": "github:aantron/repromise_lwt:repromise_lwt.opam#315a149"
-  },
-  "devDependencies": { "@opam/merlin": "*" }
+  }
 }
+
