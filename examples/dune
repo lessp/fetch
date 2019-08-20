@@ -1,0 +1,11 @@
+(executables
+  (names 
+    http_lwt_get
+    http_lwt_get_success
+  )
+  (libraries 
+   console.lib 
+   fetch-lwt
+   )
+)
+

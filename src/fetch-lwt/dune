@@ -1,0 +1,11 @@
+(library
+  (name fetch_lwt)
+  (public_name fetch-lwt)
+  (libraries 
+   fetch
+   cohttp
+   cohttp-lwt-unix
+   uri
+   )
+)
+
