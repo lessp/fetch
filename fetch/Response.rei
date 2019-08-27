@@ -8,4 +8,11 @@ type t = {
   url: string,
 };
 
-let make = (~body, ~headers, ~status, ~url) => {body, headers, status, url};
+let make:
+  (
+    ~body: Body.t,
+    ~headers: list(Headers.t),
+    ~status: Status.t,
+    ~url: string
+  ) =>
+  t;
