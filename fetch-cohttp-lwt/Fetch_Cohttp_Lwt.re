@@ -1,4 +1,25 @@
-module CohttpLwt = {
+module CohttpLwt: Fetch.IO = {
+  module Method = Fetch.Method;
+  module Headers = Fetch.Headers;
+  module Response = {
+    module Status = Fetch.Response.Status;
+    module Body = Fetch.Response.Body;
+
+    type t = {
+      body: Body.t,
+      headers: list(Headers.t),
+      status: Status.t,
+      url: string,
+    };
+
+    let make = (~body, ~headers, ~status, ~url) => {
+      body,
+      headers,
+      status,
+      url,
+    };
+  };
+
   type t = Lwt.t(result(Fetch.Response.t, exn));
   let make = ({headers, body, meth, url}: Fetch.Request.t) => {
     open Lwt.Infix;
@@ -21,13 +42,21 @@ module CohttpLwt = {
             resp
             |> Cohttp.Response.status
             |> Cohttp.Code.code_of_status
-            |> Fetch.Response.Status.ofCode;
+            |> Response.Status.ofCode;
           let headers =
             resp |> Cohttp.Response.headers |> Cohttp.Header.to_list;
           body
           |> Cohttp_lwt.Body.to_string
           >|= (
-            body => Ok(Fetch.Response.make(~status, ~body, ~headers, ~url))
+            body =>
+              Ok(
+                Response.make(
+                  ~status,
+                  ~body=Fetch.Response.Body.make(body),
+                  ~headers,
+                  ~url,
+                ),
+              )
           );
         }
       );

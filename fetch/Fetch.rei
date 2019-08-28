@@ -3,7 +3,7 @@ module Headers = Headers;
 module Request = Request;
 module Response = Response;
 
-module type HttpImplementation = {
+module type IO = {
   module Response = Response;
 
   type t;
@@ -29,4 +29,4 @@ module type S = {
     t;
 };
 
-module Make: (HI: HttpImplementation) => S with type t = HI.t;
+module Make: (IO: IO) => S with type t = IO.t;
