@@ -1,0 +1,6 @@
+(library
+ (name fetch_core)
+ (public_name fetch-core)
+ (libraries cohttp)
+ (modules_without_implementation body response)
+)

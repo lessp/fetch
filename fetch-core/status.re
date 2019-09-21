@@ -242,9 +242,10 @@ let isInformational =
   | #informational => true
   | _ => false;
 
-/* Should other be an error as well? */
 let isError =
   fun
   | #serverError
   | #clientError => true
   | _ => false;
+
+let make = status => ofCode(status);

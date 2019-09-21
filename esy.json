@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "description": "A fetch library for ReasonML/OCaml",
   "license": "MIT",
-  "esy": { "build": "dune build -p fetch" },
+  "esy": { "build": "dune build -p fetch-core" },
+  "scripts": {
+    "example": "esy refmterr dune exec examples/http_lwt_get.exe"
+  },
   "dependencies": {
     "@opam/cohttp": "2.3.0",
     "@opam/cohttp-lwt-unix": "2.3.0",

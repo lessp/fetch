@@ -94,3 +94,5 @@ let isRedirect: t => bool;
 let isClientError: t => bool;
 let isServerError: t => bool;
 let isError: t => bool;
+
+let make: int => t;

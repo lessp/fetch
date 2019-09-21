@@ -7,8 +7,8 @@ Fetch.(
        | Ok({Response.body, Response.status, _}) =>
          Printf.printf(
            "Status-Code: %d\nBody: %s",
-           status |> Response.Status.toCode,
-           body |> Response.Body.toString,
+           Response.Status.toCode(status),
+           Response.Body.toString(body),
          )
        | Error(_) => Printf.printf("That's an error"),
      )

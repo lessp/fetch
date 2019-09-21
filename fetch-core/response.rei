@@ -1,5 +1,5 @@
-module Status = Status;
-module Body = Body;
+module Status: (module type of Status);
+module Body: (module type of Body);
 
 type t = {
   body: Body.t,
