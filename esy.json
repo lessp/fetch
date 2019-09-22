@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "description": "A fetch library for ReasonML/OCaml",
   "license": "MIT",
-  "esy": { "build": "dune build -p fetch-core" },
+  "esy": {
+    "build": "dune build -p fetch-core",
+    "buildDev": "refmterr dune build @all",
+    "buildsInSource": "_build"
+  },
   "scripts": {
     "example": "esy refmterr dune exec examples/http_lwt_get.exe"
   },
@@ -17,10 +21,14 @@
     "@opam/repromise_lwt": "*",
     "@opam/uri": "^3.0.0",
     "@reason-native/console": "^0.1.0",
-    "ocaml": "<4.9.0",
+    "ocaml": "<4.8.0",
     "refmterr": "^3.2.2"
   },
-  "devDependencies": { "@opam/merlin": "^3.3.2" },
+  "devDependencies": {
+    "@opam/merlin": "^3.3.2",
+    "@opam/rtop": "3.5.0",
+    "@opam/utop": "2.4.2"
+  },
   "resolutions": {
     "@opam/repromise": "github:aantron/repromise:repromise.opam#08030c5",
     "@opam/repromise_lwt": "github:aantron/repromise_lwt:repromise_lwt.opam#315a149"
