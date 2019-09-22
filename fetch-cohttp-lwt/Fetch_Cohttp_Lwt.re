@@ -1,4 +1,4 @@
-include Fetch_core.Fetchify.Make({
+module IO = {
   module Response = {
     module Status = {
       include Fetch_core.Response.Status;
@@ -70,4 +70,6 @@ include Fetch_core.Fetchify.Make({
       );
     response;
   };
-});
+};
+
+include Fetch_core.Fetchify.Make(IO);
