@@ -1,5 +1,33 @@
+module type Body = {
+  type t;
+
+  let toString: t => string;
+  let ofString: string => t;
+};
+
+module type Response = {
+  module Status: (module type of Status);
+  module Body: Body;
+
+  type t = {
+    body: Body.t,
+    headers: list(Headers.t),
+    status: Status.t,
+    url: string,
+  };
+
+  let make:
+    (
+      ~body: Body.t,
+      ~headers: list(Headers.t),
+      ~status: Status.t,
+      ~url: string
+    ) =>
+    t;
+};
+
 module type IO = {
-  module Response: (module type of Response);
+  module Response: Response;
 
   type t;
 
@@ -32,7 +60,7 @@ module type FETCH = {
 
   module Method = Method;
   module Headers = Headers;
-  module Response: (module type of Response);
+  module Response: Response;
 
   let fetch:
     (
