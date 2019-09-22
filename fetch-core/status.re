@@ -248,4 +248,4 @@ let isError =
   | #clientError => true
   | _ => false;
 
-let make = status => ofCode(status);
+let make = ofCode;
