@@ -1,4 +1,4 @@
-module Fetch = Fetch_cohttp_lwt;
+module Fetch = Fetch_cohttp_lwt.Fetch_Cohttp_Lwt;
 
 let statusOk = response => {
   Fetch.Response.(
