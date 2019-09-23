@@ -3,28 +3,36 @@
   "version": "0.1.0",
   "description": "A fetch library for ReasonML/OCaml",
   "license": "MIT",
-  "esy": { "build": "dune build -p fetch" },
+  "esy": {
+    "build": "dune build -p fetch-core",
+    "buildDev": "refmterr dune build @all",
+    "buildsInSource": "_build"
+  },
+  "scripts": {
+    "example": "esy refmterr dune exec examples/http_lwt_get.exe"
+  },
   "dependencies": {
-    "@opam/cohttp": "*",
-    "@opam/cohttp-lwt-unix": "*",
-    "@opam/dune": "*",
-    "@opam/lwt": "*",
-    "@opam/lwt_ppx": "*",
-    "@opam/lwt_ssl": "*",
-    "@opam/merlin": "*",
-    "@opam/reason": "3.5.0",
+    "@opam/cohttp": "^2.3.0",
+    "@opam/cohttp-lwt-unix": "^2.3.0",
+    "@opam/dune": "^1.11.1",
+    "@opam/lwt": "^4.2.1",
+    "@opam/lwt_ppx": "^1.2.2",
+    "@opam/reason": "^3.5.0",
     "@opam/repromise_lwt": "*",
-    "@opam/ssl": ">= 0.5.8",
-    "@opam/tls": "*",
-    "@opam/uri": "*",
-    "@reason-native/console": "*",
-    "ocaml": "4.7.1000",
+    "@opam/tablecloth-native": "0.0.6",
+    "@opam/uri": "^3.0.0",
+    "@reason-native/console": "^0.1.0",
+    "ocaml": "<4.8.0",
     "refmterr": "^3.2.2"
   },
-  "devDependencies": { "@opam/merlin": "*" },
+  "devDependencies": {
+    "@opam/merlin": "^3.3.2",
+    "@opam/rtop": "3.5.0",
+    "@opam/utop": "2.4.2"
+  },
   "resolutions": {
     "@opam/repromise": "github:aantron/repromise:repromise.opam#08030c5",
-    "@opam/repromise_lwt": "github:aantron/repromise_lwt:repromise_lwt.opam#315a149"
+    "@opam/repromise_lwt":
+      "github:aantron/repromise_lwt:repromise_lwt.opam#315a149"
   }
 }
-

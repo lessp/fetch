@@ -1,0 +1,5 @@
+(library
+ (name fetch_core)
+ (public_name fetch-core)
+ (modules_without_implementation body)
+)

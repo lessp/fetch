@@ -42,14 +42,18 @@ E.g.
 
 ```reason
 module H2 = {
-  module Lwt = Fetch.Make(H2Lwt);
+  module Lwt = Fetch_core.Fetchify.Make(H2Lwt);
 };
 ```
 
 ... or ad hoc
 
 ```reason
-module Fetch = Fetch.Make({
+module Fetch = Fetch_core.Fetchify.Make({
+  module Response = {
+    /* your implementation */
+  };
+
   type t = Promise.t(result(Response.t, exn));
 
   let make = (req: Request.t) => /* your custom implementation */
