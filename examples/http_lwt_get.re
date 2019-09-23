@@ -1,4 +1,4 @@
-module Fetch = Fetch_cohttp_lwt.Fetch_Cohttp_Lwt;
+module Fetch = Fetch_cohttp_lwt;
 
 Fetch.(
   fetch("http://httpbin.org/get", ())

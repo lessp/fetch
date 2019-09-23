@@ -19,6 +19,7 @@
     "@opam/lwt_ppx": "^1.2.2",
     "@opam/reason": "^3.5.0",
     "@opam/repromise_lwt": "*",
+    "@opam/tablecloth-native": "0.0.6",
     "@opam/uri": "^3.0.0",
     "@reason-native/console": "^0.1.0",
     "ocaml": "<4.8.0",
@@ -31,6 +32,7 @@
   },
   "resolutions": {
     "@opam/repromise": "github:aantron/repromise:repromise.opam#08030c5",
-    "@opam/repromise_lwt": "github:aantron/repromise_lwt:repromise_lwt.opam#315a149"
+    "@opam/repromise_lwt":
+      "github:aantron/repromise_lwt:repromise_lwt.opam#315a149"
   }
 }

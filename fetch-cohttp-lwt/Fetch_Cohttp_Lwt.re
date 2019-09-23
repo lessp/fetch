@@ -33,8 +33,8 @@ module IO = {
 
     let body =
       body
-      |> Utils.Option.map(Cohttp_lwt.Body.of_string)
-      |> Utils.Option.withDefault(Cohttp_lwt.Body.empty);
+      |> Tablecloth.Option.map(~f=Cohttp_lwt.Body.of_string)
+      |> Tablecloth.Option.withDefault(~default=Cohttp_lwt.Body.empty);
 
     let response =
       Cohttp.(
