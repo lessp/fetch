@@ -4,7 +4,7 @@ A fetch library for ReasonML/OCaml.
 
 **TODO:**
 
-- [ ] Implement a functor for the Response and its functions
+- [ ] Figure out why it's working, and why the language-server might not be working.
 
 ## How to use
 
