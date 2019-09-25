@@ -5,8 +5,7 @@
   "license": "MIT",
   "esy": {
     "build": "dune build -p fetch-core",
-    "buildDev": "refmterr dune build @all",
-    "buildsInSource": "_build"
+    "buildDev": "refmterr dune build @all"
   },
   "scripts": {
     "example": "esy refmterr dune exec examples/http_lwt_get.exe"
@@ -32,7 +31,6 @@
   },
   "resolutions": {
     "@opam/repromise": "github:aantron/repromise:repromise.opam#08030c5",
-    "@opam/repromise_lwt":
-      "github:aantron/repromise_lwt:repromise_lwt.opam#315a149"
+    "@opam/repromise_lwt": "github:aantron/repromise_lwt:repromise_lwt.opam#315a149"
   }
 }

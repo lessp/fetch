@@ -8,7 +8,7 @@ Fetch.(
          Printf.printf(
            "Status-Code: %d\nBody: %s",
            Response.Status.toCode(status),
-           Response.Body.toString(body),
+           Cohttp.Body.to_string(body),
          )
        | Error(_) => Printf.printf("That's an error"),
      )

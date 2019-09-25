@@ -4,7 +4,7 @@ A fetch library for ReasonML/OCaml.
 
 **TODO:**
 
-- [ ] Figure out why it's working, and why the language-server might not be working.
+- [ ] Make it show `Promise.t(result(Response.t, exn))` instead of `Fetch.t`
 
 ## How to use
 

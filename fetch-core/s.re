@@ -34,27 +34,6 @@ module type IO = {
   let make: Request.t => t;
 };
 
-/* module type RESPONSE = { */
-/*   module Body: (module type of Body); */
-/*   module Status: (module type of Status); */
-
-/*   type t = { */
-/*     body: Body.t, */
-/*     headers: list(Headers.t), */
-/*     status: Status.t, */
-/*     url: string, */
-/*   }; */
-
-/*   let make: */
-/*     ( */
-/*       ~body: Body.t, */
-/*       ~headers: list(Headers.t), */
-/*       ~status: Status.t, */
-/*       ~url: string */
-/*     ) => */
-/*     t; */
-/* }; */
-
 module type FETCH = {
   type t;
 
