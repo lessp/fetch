@@ -8,12 +8,15 @@
     "buildDev": "refmterr dune build @all"
   },
   "scripts": {
-    "example": "esy refmterr dune exec examples/http_lwt_get.exe"
+    "example": "esy refmterr dune exec examples/http_lwt_get.exe",
+    "test": "esy dune runtest test"
   },
   "dependencies": {
+    "@opam/alcotest": "0.8.5",
     "@opam/cohttp": "^2.3.0",
     "@opam/cohttp-lwt-unix": "^2.3.0",
     "@opam/dune": "^1.11.1",
+    "@opam/js_of_ocaml-compiler": "3.4.0",
     "@opam/lwt": "^4.2.1",
     "@opam/lwt_ppx": "^1.2.2",
     "@opam/reason": "^3.5.0",

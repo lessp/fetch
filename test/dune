@@ -1,0 +1,3 @@
+(tests
+ (names status)
+ (libraries alcotest fetch_core))
