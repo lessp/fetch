@@ -1,17 +1,15 @@
 module Fetch = Fetch_cohttp_lwt;
 
-let statusOk = response => {
+let handleResponse =
   Fetch.Response.(
-    switch (response) {
-    | Ok(res) when Status.isSuccessful(res.status) => Ok(res)
-    | _ => Error(`NoResult)
-    }
+    fun
+    | Ok({status, _}) when Status.isSuccessful(status) => "Success!"
+    | _ => "That's anything but successful. :-("
   );
-};
 
 Fetch.(
   fetch("http://httpbin.org/get", ())
-  |> Lwt.map(statusOk)
+  |> Lwt.map(handleResponse)
   |> Lwt.map(Console.log)
   |> Lwt_main.run
 );
