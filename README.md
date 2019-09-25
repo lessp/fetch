@@ -2,10 +2,6 @@
 
 A fetch library for ReasonML/OCaml.
 
-**TODO:**
-
-- [ ] Make it show `Promise.t(result(Response.t, exn))` instead of `Fetch.t`
-
 ## How to use
 
 e.g.
