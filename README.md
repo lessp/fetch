@@ -1,30 +1,12 @@
 # Fetch
 
-A fetch library for ReasonML/OCaml.
+A fetch library/interface for ReasonML/OCaml.
 
-## How to use
+# ToC
 
-e.g.
-
-```reason
-module Fetch = Fetch_lwt;
-
-Fetch.(
-  fetch("http://httpbin.org/get", ())
-  |> Lwt.map(
-       fun
-       | Ok({Response.body, Response.status, _}) =>
-         Printf.printf(
-           "Status: %d
-            Body: %s",
-           Response.Status.toCode(status),
-           Response.Body.toString(body),
-         )
-       | Error(_) => Printf.printf("That's an error"),
-     )
-  |> Lwt_main.run
-);
-```
+- [What](#what)
+- [Why](#why)
+- [How to use](#how-to-use)
 
 ## What?
 
@@ -64,3 +46,27 @@ This is ultimately a good thing as helps in improving the ecosystem, and also, m
 The goal is to reduce the burden of transitioning between as well as picking a library to begin with.
 
 By making the implementation-details agnostic and trying to specify a common interface which is also a bit higher-level it hopefully strikes a good balance and can be useful for the community as a whole.
+
+## How to use
+
+e.g.
+
+```reason
+module Fetch = Fetch_lwt;
+
+Fetch.(
+  fetch("http://httpbin.org/get", ())
+  |> Lwt.map(
+       fun
+       | Ok({Response.body, Response.status, _}) =>
+         Printf.printf(
+           "Status: %d
+            Body: %s",
+           Response.Status.toCode(status),
+           Response.Body.toString(body),
+         )
+       | Error(_) => Printf.printf("That's an error"),
+     )
+  |> Lwt_main.run
+);
+```
