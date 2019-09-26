@@ -115,6 +115,101 @@ module ToCode = {
       511,
     );
   };
+
+  let otherToCode = () => {
+    Alcotest.(check(int, "Other", toCode(`Other(666)), 666));
+  };
+};
+
+module OfCode = {
+  let informationOfCode = () => {
+    open Alcotest;
+
+    check(int, "Continue", 100 |> ofCode |> toCode, 100);
+    check(int, "SwitchingProtocols", 101 |> ofCode |> toCode, 101);
+    check(int, "Processing", 102 |> ofCode |> toCode, 102);
+  };
+
+  let successOfCode = () => {
+    open Alcotest;
+
+    check(int, "OK", 200 |> ofCode |> toCode, 200);
+    check(int, "Created", 201 |> ofCode |> toCode, 201);
+    check(int, "Accepted", 202 |> ofCode |> toCode, 202);
+    check(int, "NonAuthoritativeInformation", 203 |> ofCode |> toCode, 203);
+    check(int, "NoContent", 204 |> ofCode |> toCode, 204);
+    check(int, "ResetContent", 205 |> ofCode |> toCode, 205);
+    check(int, "PartialContent", 206 |> ofCode |> toCode, 206);
+    check(int, "MultiStatus", 207 |> ofCode |> toCode, 207);
+    check(int, "AlreadyReported", 208 |> ofCode |> toCode, 208);
+    check(int, "IMUsed", 226 |> ofCode |> toCode, 226);
+  };
+
+  let redirectionOfCode = () => {
+    open Alcotest;
+
+    check(int, "MultipleChoices", 300 |> ofCode |> toCode, 300);
+    check(int, "MovedPermanently", 301 |> ofCode |> toCode, 301);
+    check(int, "Found", 302 |> ofCode |> toCode, 302);
+    check(int, "SeeOther", 303 |> ofCode |> toCode, 303);
+    check(int, "NotModified", 304 |> ofCode |> toCode, 304);
+    check(int, "UseProxy", 305 |> ofCode |> toCode, 305);
+    check(int, "TemporaryRedirect", 307 |> ofCode |> toCode, 307);
+    check(int, "PermanentRedirect", 308 |> ofCode |> toCode, 308);
+  };
+
+  let clientErrorOfCode = () => {
+    open Alcotest;
+
+    check(int, "BadRequest", 400 |> ofCode |> toCode, 400);
+    check(int, "Unauthorized", 401 |> ofCode |> toCode, 401);
+    check(int, "PaymentRequired", 402 |> ofCode |> toCode, 402);
+    check(int, "Forbidden", 403 |> ofCode |> toCode, 403);
+    check(int, "NotFound", 404 |> ofCode |> toCode, 404);
+    check(int, "MethodNotAllowed", 405 |> ofCode |> toCode, 405);
+    check(int, "NotAcceptable", 406 |> ofCode |> toCode, 406);
+    check(int, "ProxyAuthenticationRequired", 407 |> ofCode |> toCode, 407);
+    check(int, "RequestTimeout", 408 |> ofCode |> toCode, 408);
+    check(int, "Conflict", 409 |> ofCode |> toCode, 409);
+    check(int, "Gone", 410 |> ofCode |> toCode, 410);
+    check(int, "LengthRequired", 411 |> ofCode |> toCode, 411);
+    check(int, "PreconditionFailed", 412 |> ofCode |> toCode, 412);
+    check(int, "PayloadTooLarge", 413 |> ofCode |> toCode, 413);
+    check(int, "UriTooLong", 414 |> ofCode |> toCode, 414);
+    check(int, "UnsupportedMediaType", 415 |> ofCode |> toCode, 415);
+    check(int, "RangeNotSatisfiable", 416 |> ofCode |> toCode, 416);
+    check(int, "ExpectationFailed", 417 |> ofCode |> toCode, 417);
+    check(int, "ImATeapot", 418 |> ofCode |> toCode, 418);
+    check(int, "MisdirectedRequest", 421 |> ofCode |> toCode, 421);
+    check(int, "UnprocessableEntity", 422 |> ofCode |> toCode, 422);
+    check(int, "Locked", 423 |> ofCode |> toCode, 423);
+    check(int, "FailedDependency", 424 |> ofCode |> toCode, 424);
+    check(int, "UpgradeRequired", 426 |> ofCode |> toCode, 426);
+    check(int, "PreconditionRequired", 428 |> ofCode |> toCode, 428);
+    check(int, "TooManyRequests", 429 |> ofCode |> toCode, 429);
+    check(int, "RequestHeaderFieldsTooLarge", 431 |> ofCode |> toCode, 431);
+    check(int, "UnavailableForLegalReasons", 451 |> ofCode |> toCode, 451);
+  };
+
+  let internalErrorOfCode = () => {
+    open Alcotest;
+
+    check(int, "InternalServerError", 500 |> ofCode |> toCode, 500);
+    check(int, "NotImplemented", 501 |> ofCode |> toCode, 501);
+    check(int, "BadGateway", 502 |> ofCode |> toCode, 502);
+    check(int, "ServiceUnavailable", 503 |> ofCode |> toCode, 503);
+    check(int, "GatewayTimeout", 504 |> ofCode |> toCode, 504);
+    check(int, "HttpVersionNotSupported", 505 |> ofCode |> toCode, 505);
+    check(int, "VariantAlsoNegotiates", 506 |> ofCode |> toCode, 506);
+    check(int, "InsufficientStorage", 507 |> ofCode |> toCode, 507);
+    check(int, "LoopDetected", 508 |> ofCode |> toCode, 508);
+    check(int, "NotExtended", 510 |> ofCode |> toCode, 510);
+    check(int, "NetworkAuthenticationRequired", 511 |> ofCode |> toCode, 511);
+  };
+
+  let otherOfCode = () => {
+    Alcotest.(check(int, "Other", 666 |> ofCode |> toCode, 666));
+  };
 };
 
 let toCodeTest =
@@ -127,10 +222,26 @@ let toCodeTest =
         test_case("redirection", `Quick, redirectionToCode),
         test_case("clientError", `Quick, clientErrorToCode),
         test_case("internalError", `Quick, internalErrorToCode),
+        test_case("other", `Quick, otherToCode),
+      ],
+    )
+  );
+
+let ofCodeTest =
+  Alcotest.(
+    OfCode.(
+      "Status - ofCode",
+      [
+        test_case("informational", `Quick, informationOfCode),
+        test_case("success", `Quick, successOfCode),
+        test_case("redirection", `Quick, redirectionOfCode),
+        test_case("clientError", `Quick, clientErrorOfCode),
+        test_case("internalError", `Quick, internalErrorOfCode),
+        test_case("other", `Quick, otherOfCode),
       ],
     )
   );
 
 let () = {
-  Alcotest.(run("Status", [toCodeTest]));
+  Alcotest.(run("Status", [toCodeTest, ofCodeTest]));
 };
