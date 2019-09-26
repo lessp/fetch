@@ -9,6 +9,7 @@
   },
   "scripts": {
     "example": "esy refmterr dune exec examples/http_lwt_get.exe",
+    "format": "esy dune build @fmt --auto-promote",
     "test": "esy dune runtest test"
   },
   "dependencies": {
