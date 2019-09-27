@@ -43,7 +43,7 @@ module IO = {
 
     let morph_request =
       Morph.Request.make(
-        ~meth=meth |> Fetch_core__Method.toString |> Morph.Method.of_string,
+        ~meth,
         ~headers=
           headers |> List.append([("User-Agent", "reason-fetch/0.0.1")]),
         ~read_body=
