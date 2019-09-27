@@ -1,0 +1,4 @@
+(library
+ (name fetch_native_lwt)
+ (public_name fetch-native-lwt)
+ (libraries fetch-core morph_client))
