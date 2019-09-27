@@ -44,8 +44,7 @@ module IO = {
     let morph_request =
       Morph.Request.make(
         ~meth,
-        ~headers=
-          headers |> List.append([("User-Agent", "reason-fetch/0.0.1")]),
+        ~headers=headers |> List.append([("User-Agent", "reason-fetch")]),
         ~read_body=
           () =>
             Lwt.return(
