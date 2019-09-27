@@ -1,5 +1,5 @@
 {
-  "checksum": "4cfb843efa478e7f90fdd9cc4a07b3c8",
+  "checksum": "f6adbb37e49ce8785bac1da36c82fd4c",
   "root": "fetch@link-dev:./esy.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#cca65f99674ed2d954d28788edeb8c57fada5ed0@d41d8cd9": {
@@ -62,15 +62,15 @@
         "refmterr@3.2.2@d41d8cd9", "ocaml@4.7.1004@d41d8cd9",
         "@reason-native/console@0.1.0@d41d8cd9",
         "@reason-native-web/morph_client@0.1.1@d41d8cd9",
-        "@opam/uri@opam:3.0.0@08fba7ee", "@opam/reason@opam:3.5.0@40205ac4",
+        "@opam/reason@opam:3.5.0@40205ac4",
         "@opam/opium_core@github:rgrinberg/opium:opium_core.opam#287b83f85bcf6c75d503b1edab77c7ec524f9090@d41d8cd9",
-        "@opam/js_of_ocaml-compiler@opam:3.4.0@d2f7c406",
-        "@opam/dune@opam:1.11.3@9894df55",
-        "@opam/alcotest@opam:0.8.5@68e6c66c"
+        "@opam/dune@opam:1.11.3@9894df55"
       ],
       "devDependencies": [
         "@opam/utop@opam:2.4.2@1cef5c4e", "@opam/rtop@opam:3.5.0@810d71c8",
-        "@opam/merlin@opam:3.3.2@7a364181"
+        "@opam/merlin@opam:3.3.2@7a364181",
+        "@opam/js_of_ocaml-compiler@opam:3.4.0@d2f7c406",
+        "@opam/alcotest@opam:0.8.5@68e6c66c"
       ]
     },
     "@reason-native/pastel@0.2.1@d41d8cd9": {
