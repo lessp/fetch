@@ -1,5 +1,5 @@
 {
-  "checksum": "86241686627977b4835ce64007790b91",
+  "checksum": "4cfb843efa478e7f90fdd9cc4a07b3c8",
   "root": "fetch@link-dev:./esy.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#cca65f99674ed2d954d28788edeb8c57fada5ed0@d41d8cd9": {
@@ -63,6 +63,7 @@
         "@reason-native/console@0.1.0@d41d8cd9",
         "@reason-native-web/morph_client@0.1.1@d41d8cd9",
         "@opam/uri@opam:3.0.0@08fba7ee", "@opam/reason@opam:3.5.0@40205ac4",
+        "@opam/opium_core@github:rgrinberg/opium:opium_core.opam#287b83f85bcf6c75d503b1edab77c7ec524f9090@d41d8cd9",
         "@opam/js_of_ocaml-compiler@opam:3.4.0@d2f7c406",
         "@opam/dune@opam:1.11.3@9894df55",
         "@opam/alcotest@opam:0.8.5@68e6c66c"

@@ -16,6 +16,7 @@
     "@opam/alcotest": "0.8.5",
     "@opam/dune": "^1.11.1",
     "@opam/js_of_ocaml-compiler": "3.4.0",
+    "@opam/opium_core": "rgrinberg/opium:opium_core.opam",
     "@opam/reason": "^3.5.0",
     "@opam/uri": "^3.0.0",
     "@reason-native-web/morph_client": "^0.1.1",
@@ -31,8 +32,6 @@
   "resolutions": {
     "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
     "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
-    "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
-    "@opam/opium_core": "rgrinberg/opium:opium_core.opam#287b83f85bcf6c75d503b1edab77c7ec524f9090"
+    "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#76b461bed081c64908fb1fdfa076ab2c936ca622"
   }
 }
-
