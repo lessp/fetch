@@ -8,8 +8,7 @@
     "buildDev": "refmterr dune build @all"
   },
   "scripts": {
-    "format": "esy dune build @fmt --auto-promote",
-    "test": "esy dune runtest test"
+    "format": "esy dune build @fmt --auto-promote"
   },
   "dependencies": {
     "@opam/dune": "^1.11.1",
