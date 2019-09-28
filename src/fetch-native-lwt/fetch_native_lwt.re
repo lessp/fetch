@@ -14,7 +14,7 @@ module IO = {
       let toString = body => {
         switch (body) {
         | `String(body) => body
-        | `Stream(chars) => Lwt_stream.to_string(chars) |> Lwt_main.run
+        | _ => ""
         };
       };
 
@@ -39,9 +39,7 @@ module IO = {
   type t = Lwt.t(result(Response.t, exn));
 
   let make = ({headers, body, meth, url}: Fetch_core.Request.t) => {
-    open Lwt.Infix;
-
-    let morph_request =
+    Lwt.Infix.(
       Morph.Request.make(
         ~meth,
         ~headers=headers |> List.append([("User-Agent", "reason-fetch")]),
@@ -56,10 +54,8 @@ module IO = {
               ),
             ),
         url,
-      );
-
-    let response =
-      Morph_client.handle(morph_request)
+      )
+      |> Morph_client.handle
       >>= (
         ({Morph.Response.status, body, headers}) => {
           Lwt.return(
@@ -73,9 +69,8 @@ module IO = {
             ),
           );
         }
-      );
-
-    response;
+      )
+    );
   };
 };
 
