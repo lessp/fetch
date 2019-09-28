@@ -1,0 +1,62 @@
+{
+  "projectName": "reason-fetch",
+  "projectOwner": "lessp",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "Et7f3",
+      "name": "Et7f3",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/29592775?v=4",
+      "profile": "https://github.com/Et7f3",
+      "contributions": [
+        "code",
+        "bug",
+        "ideas",
+        "maintenance",
+        "review"
+      ]
+    },
+    {
+      "login": "ulrikstrid",
+      "name": "Ulrik Strid",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1607770?v=4",
+      "profile": "https://github.com/ulrikstrid",
+      "contributions": [
+        "code",
+        "ideas",
+        "review"
+      ]
+    },
+    {
+      "login": "ostera",
+      "name": "Leandro Ostera",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/854222?v=4",
+      "profile": "https://ostera.io",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "lessp",
+      "name": "Tom Ekander",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17602389?v=4",
+      "profile": "https://lessp.dev/",
+      "contributions": [
+        "code",
+        "bug",
+        "ideas",
+        "maintenance",
+        "review",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
