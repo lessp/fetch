@@ -14,11 +14,23 @@ A consumable fetch-library for ReasonML/OCaml native. Uses `Lwt` for its `Promis
 
 ## Contributing
 
-Feel free to open an issue and/or grabbing one of the [open issues](/issues).
+Feel free to open an issue and/or grabbing one of the [open issues](https://github.com/lessp/reason-fetch/issues).
 
 ## Contributors
 
-All [contributors](https://github.com/lessp/reason-fetch/graphs/contributors), @ostera, @ulrikstrid.
+All [contributors](https://github.com/lessp/reason-fetch/graphs/contributors) as well as [@ulrikstrid](https://github.com/ulrikstrid) and [@ostera](https://github.com/ostera).
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/Et7f3"><img src="https://avatars2.githubusercontent.com/u/29592775?v=4" width="100px;" alt="Et7f3"/><br /><sub><b>Et7f3</b></sub></a><br /><a href="https://github.com/lessp/reason-fetch/commits?author=Et7f3" title="Code">💻</a> <a href="https://github.com/lessp/reason-fetch/issues?q=author%3AEt7f3" title="Bug reports">🐛</a> <a href="#ideas-Et7f3" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-Et7f3" title="Maintenance">🚧</a> <a href="#review-Et7f3" title="Reviewed Pull Requests">👀</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## License
 

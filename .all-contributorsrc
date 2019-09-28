@@ -1,0 +1,28 @@
+{
+  "projectName": "reason-fetch",
+  "projectOwner": "lessp",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "Et7f3",
+      "name": "Et7f3",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/29592775?v=4",
+      "profile": "https://github.com/Et7f3",
+      "contributions": [
+        "code",
+        "bug",
+        "ideas",
+        "maintenance",
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
