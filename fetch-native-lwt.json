@@ -1,32 +1,26 @@
 {
-  "name": "fetch",
+  "name": "fetch-native-lwt",
   "version": "0.1.0",
-  "description": "Fetch libraries and interface for ReasonML/OCaml",
+  "description": "Fetch client (Lwt) for native ReasonML/OCaml",
   "license": "MIT",
   "esy": {
-    "build": ["dune build -p fetch-core", "dune build -p fetch-native-lwt"],
+    "build": "dune build --profile=release ./src/fetch-native-lwt",
     "buildDev": "refmterr dune build @all"
   },
   "scripts": {
-    "example": "esy refmterr dune exec examples/fetch_native_lwt_get.exe",
-    "format": "esy dune build @fmt --auto-promote",
-    "test": "esy dune runtest test"
+    "format": "esy dune build @fmt --auto-promote"
   },
   "dependencies": {
     "@opam/dune": "^1.11.1",
-    "@opam/opium_core": "rgrinberg/opium:opium_core.opam",
     "@opam/reason": "^3.5.0",
     "@reason-native-web/morph_client": "^0.1.1",
     "ocaml": "<4.8.0"
   },
   "devDependencies": {
-    "@opam/alcotest": "0.8.5",
-    "@opam/js_of_ocaml-compiler": "3.4.0",
+    "refmterr": "^3.2.2",
     "@opam/merlin": "^3.3.2",
     "@opam/rtop": "3.5.0",
-    "@opam/utop": "2.4.2",
-    "@reason-native/console": "^0.1.0",
-    "refmterr": "^3.2.2"
+    "@opam/utop": "2.4.2"
   },
   "resolutions": {
     "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
