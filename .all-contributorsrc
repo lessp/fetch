@@ -22,6 +22,17 @@
         "maintenance",
         "review"
       ]
+    },
+    {
+      "login": "ulrikstrid",
+      "name": "Ulrik Strid",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1607770?v=4",
+      "profile": "https://github.com/ulrikstrid",
+      "contributions": [
+        "code",
+        "ideas",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7
