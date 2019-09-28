@@ -1,72 +1,25 @@
 # Fetch
 
-A fetch library/interface for ReasonML/OCaml.
-
-# ToC
-
-- [What](#what)
-- [Why](#why)
-- [How to use](#how-to-use)
-
-## What?
+Fetch libraries and interface for ReasonML/OCaml.
 
 Fetch aims to provide a common interface over different HTTP and Promise-implementations in the ReasonML/OCaml ecosystem.
 
-It is loosely based on the Fetch-specification from [Whatwg](https://fetch.spec.whatwg.org/), and has also taken inspiration and attempted to follow community-idioms and best practices with regards to HTTP-requests.
+## [Fetch Core](./src/fetch-core)
 
-The goal is to be pluggable with any HTTP or Promise-implementation provided it conforms to the common interface.
+Provides a functor for creating and providing your own Fetch-implementation. The goal is to be pluggable with any HTTP or Promise-implementation provided it conforms to the common interface.
 
-E.g.
+## [Fetch Native Lwt](./src/fetch-native-lwt)
 
-```reason
-module H2 = {
-  module Lwt = Fetch_core.Fetchify.Make(H2Lwt);
-};
-```
+A consumable fetch-library for ReasonML/OCaml native. Uses `Lwt` for its `Promise`-implementation.
 
-... or ad hoc
+## Contributing
 
-```reason
-module Fetch = Fetch_core.Fetchify.Make({
-  module Response = {
-    /* your implementation */
-  };
+Feel free to open an issue and/or grabbing one of the [open issues](/issues).
 
-  type t = Promise.t(result(Response.t, exn));
+## Contributors
 
-  let make = (req: Request.t) => /* your custom implementation */
-});
-```
+All [contributors](https://github.com/lessp/reason-fetch/graphs/contributors), @ostera, @ulrikstrid.
 
-## Why?
+## License
 
-There are several different implementations for making HTTP-requests and for handling asynchronous code in the ReasonML/OCaml ecosystem.
-This is ultimately a good thing as helps in improving the ecosystem, and also, most times there isn't always a one-size fits all.
-
-The goal is to reduce the burden of transitioning between as well as picking a library to begin with.
-
-By making the implementation-details agnostic and trying to specify a common interface which is also a bit higher-level it hopefully strikes a good balance and can be useful for the community as a whole.
-
-## How to use
-
-e.g.
-
-```reason
-module Fetch = Fetch_lwt;
-
-Fetch.(
-  fetch("http://httpbin.org/get", ())
-  |> Lwt.map(
-       fun
-       | Ok({Response.body, Response.status, _}) =>
-         Printf.printf(
-           "Status: %d
-            Body: %s",
-           Response.Status.toCode(status),
-           Response.Body.toString(body),
-         )
-       | Error(_) => Printf.printf("That's an error"),
-     )
-  |> Lwt_main.run
-);
-```
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
