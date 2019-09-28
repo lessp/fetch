@@ -26,6 +26,7 @@ All [contributors](https://github.com/lessp/reason-fetch/graphs/contributors) as
   <tr>
     <td align="center"><a href="https://github.com/Et7f3"><img src="https://avatars2.githubusercontent.com/u/29592775?v=4" width="100px;" alt="Et7f3"/><br /><sub><b>Et7f3</b></sub></a><br /><a href="https://github.com/lessp/reason-fetch/commits?author=Et7f3" title="Code">💻</a> <a href="https://github.com/lessp/reason-fetch/issues?q=author%3AEt7f3" title="Bug reports">🐛</a> <a href="#ideas-Et7f3" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-Et7f3" title="Maintenance">🚧</a> <a href="#review-Et7f3" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/ulrikstrid"><img src="https://avatars3.githubusercontent.com/u/1607770?v=4" width="100px;" alt="Ulrik Strid"/><br /><sub><b>Ulrik Strid</b></sub></a><br /><a href="https://github.com/lessp/reason-fetch/commits?author=ulrikstrid" title="Code">💻</a> <a href="#ideas-ulrikstrid" title="Ideas, Planning, & Feedback">🤔</a> <a href="#review-ulrikstrid" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://ostera.io"><img src="https://avatars0.githubusercontent.com/u/854222?v=4" width="100px;" alt="Leandro Ostera"/><br /><sub><b>Leandro Ostera</b></sub></a><br /><a href="#ideas-ostera" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
