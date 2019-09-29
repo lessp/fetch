@@ -1,5 +1,5 @@
 {
-  "name": "reason-fetch",
+  "name": "fetch",
   "version": "0.1.0",
   "description": "Fetch libraries and interface for ReasonML/OCaml",
   "license": "MIT",
@@ -15,6 +15,8 @@
     "contributors:generate": "all-contributors generate"
   },
   "dependencies": {
+    "fetch-native-lwt": "lessp/reason-fetch#678f9d2",
+    "fetch-core": "lessp/reason-fetch#678f9d2",
     "@opam/dune": "^1.11.1",
     "@opam/opium_core": "rgrinberg/opium:opium_core.opam",
     "@opam/reason": "^3.5.0",
