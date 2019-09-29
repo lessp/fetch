@@ -1,5 +1,5 @@
 {
-  "checksum": "0e5d534774302de11b2f02ea9a272169",
+  "checksum": "2c99b1b72ff668b6056a86be28422eef",
   "root": "fetch@link-dev:./esy.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#cca65f99674ed2d954d28788edeb8c57fada5ed0@d41d8cd9": {
@@ -1137,38 +1137,35 @@
       "dependencies": [ "escape-string-regexp@1.0.5@d41d8cd9" ],
       "devDependencies": []
     },
-    "fetch-native-lwt@github:lessp/reason-fetch#678f9d2@d41d8cd9": {
-      "id": "fetch-native-lwt@github:lessp/reason-fetch#678f9d2@d41d8cd9",
+    "fetch-native-lwt@link:./fetch-native-lwt.json": {
+      "id": "fetch-native-lwt@link:./fetch-native-lwt.json",
       "name": "fetch-native-lwt",
-      "version": "github:lessp/reason-fetch#678f9d2",
+      "version": "link:./fetch-native-lwt.json",
       "source": {
-        "type": "install",
-        "source": [ "github:lessp/reason-fetch#678f9d2" ]
+        "type": "link",
+        "path": ".",
+        "manifest": "fetch-native-lwt.json"
       },
       "overrides": [],
       "dependencies": [
-        "ocaml@4.7.1004@d41d8cd9",
+        "ocaml@4.7.1004@d41d8cd9", "fetch-core@link:./fetch-core.json",
         "@reason-native-web/morph_client@0.1.1@d41d8cd9",
-        "@opam/reason@opam:3.5.0@40205ac4",
-        "@opam/opium_core@github:rgrinberg/opium:opium_core.opam#287b83f85bcf6c75d503b1edab77c7ec524f9090@d41d8cd9",
-        "@opam/dune@opam:1.11.3@9894df55"
+        "@opam/reason@opam:3.5.0@40205ac4", "@opam/dune@opam:1.11.3@9894df55"
       ],
       "devDependencies": []
     },
-    "fetch-core@github:lessp/reason-fetch#678f9d2@d41d8cd9": {
-      "id": "fetch-core@github:lessp/reason-fetch#678f9d2@d41d8cd9",
+    "fetch-core@link:./fetch-core.json": {
+      "id": "fetch-core@link:./fetch-core.json",
       "name": "fetch-core",
-      "version": "github:lessp/reason-fetch#678f9d2",
+      "version": "link:./fetch-core.json",
       "source": {
-        "type": "install",
-        "source": [ "github:lessp/reason-fetch#678f9d2" ]
+        "type": "link",
+        "path": ".",
+        "manifest": "fetch-core.json"
       },
       "overrides": [],
       "dependencies": [
-        "ocaml@4.7.1004@d41d8cd9",
-        "@reason-native-web/morph_client@0.1.1@d41d8cd9",
-        "@opam/reason@opam:3.5.0@40205ac4",
-        "@opam/opium_core@github:rgrinberg/opium:opium_core.opam#287b83f85bcf6c75d503b1edab77c7ec524f9090@d41d8cd9",
+        "ocaml@4.7.1004@d41d8cd9", "@opam/reason@opam:3.5.0@40205ac4",
         "@opam/dune@opam:1.11.3@9894df55"
       ],
       "devDependencies": []
@@ -1181,8 +1178,8 @@
       "overrides": [],
       "dependencies": [
         "ocaml@4.7.1004@d41d8cd9",
-        "fetch-native-lwt@github:lessp/reason-fetch#678f9d2@d41d8cd9",
-        "fetch-core@github:lessp/reason-fetch#678f9d2@d41d8cd9",
+        "fetch-native-lwt@link:./fetch-native-lwt.json",
+        "fetch-core@link:./fetch-core.json",
         "@reason-native-web/morph_client@0.1.1@d41d8cd9",
         "@opam/reason@opam:3.5.0@40205ac4",
         "@opam/opium_core@github:rgrinberg/opium:opium_core.opam#287b83f85bcf6c75d503b1edab77c7ec524f9090@d41d8cd9",

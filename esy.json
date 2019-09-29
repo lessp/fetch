@@ -5,7 +5,11 @@
   "license": "MIT",
   "esy": {
     "build": ["dune build -p fetch-core", "dune build -p fetch-native-lwt"],
-    "buildDev": "refmterr dune build @all"
+    "buildDev": "refmterr dune build @all",
+    "install": [
+      "esy-installer fetch-core.install",
+      "esy-installer fetch-native-lwt.install"
+    ]
   },
   "scripts": {
     "example": "esy refmterr dune exec examples/fetch_native_lwt_get.exe",
@@ -15,8 +19,8 @@
     "contributors:generate": "all-contributors generate"
   },
   "dependencies": {
-    "fetch-native-lwt": "lessp/reason-fetch#678f9d2",
-    "fetch-core": "lessp/reason-fetch#678f9d2",
+    "fetch-native-lwt": "*",
+    "fetch-core": "*",
     "@opam/dune": "^1.11.1",
     "@opam/opium_core": "rgrinberg/opium:opium_core.opam",
     "@opam/reason": "^3.5.0",
@@ -34,6 +38,8 @@
     "refmterr": "^3.2.2"
   },
   "resolutions": {
+    "fetch-core": "link:./fetch-core.json",
+    "fetch-native-lwt": "link:./fetch-native-lwt.json",
     "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
     "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
     "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#76b461bed081c64908fb1fdfa076ab2c936ca622"
