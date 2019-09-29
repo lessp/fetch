@@ -24,7 +24,7 @@ jobs:
       run: esy build
     - name: Check code formatting
       run: esy dune build @fmt --root .
-    - name: Run tests
-      run: esy test
+    # - name: Run tests
+    #   run: esy test
     - name: Run example
       run: esy example
