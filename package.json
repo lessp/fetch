@@ -1,5 +1,5 @@
 {
-  "name": "fetch",
+  "name": "reason-fetch",
   "version": "0.1.0",
   "description": "Fetch libraries and interface for ReasonML/OCaml",
   "license": "MIT",
