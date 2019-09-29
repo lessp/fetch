@@ -1,0 +1,3 @@
+(executables
+ (names Get GetIsSuccessful)
+ (libraries console.lib fetch-native-lwt))

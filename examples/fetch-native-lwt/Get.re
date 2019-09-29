@@ -5,8 +5,8 @@ Fetch.(
        | Ok({Response.body, status, url, _}) => {
            Printf.printf(
              "Status-Code: %d\nBody: %s\nUrl: %s",
-             Response.Status.toCode(status),
-             Response.Body.toString(body),
+             Response.Status.to_code(status),
+             Response.Body.to_string(body),
              url,
            );
          }

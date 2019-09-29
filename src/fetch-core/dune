@@ -1,4 +1,4 @@
 (library
- (name fetch_core)
+ (name Fetch_Core)
  (public_name fetch-core)
  (modules_without_implementation body))

@@ -1,4 +1,4 @@
-open Fetch_core.Status;
+open Fetch_Core.Status;
 
 module ToCode = {
   let informationToCode = () => {

@@ -1,5 +1,5 @@
 {
-  "name": "fetch",
+  "name": "reason-fetch",
   "version": "0.1.0",
   "description": "Fetch libraries and interface for ReasonML/OCaml",
   "license": "MIT",
@@ -12,15 +12,15 @@
     ]
   },
   "scripts": {
-    "example": "esy refmterr dune exec examples/fetch_native_lwt_get.exe",
+    "example:native-lwt": "esy refmterr dune exec examples/fetch-native-lwt/get.exe",
     "format": "esy dune build @fmt --auto-promote",
     "test": "esy dune runtest test",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
   },
   "dependencies": {
-    "fetch-native-lwt": "*",
     "fetch-core": "*",
+    "fetch-native-lwt": "*",
     "@opam/dune": "^1.11.1",
     "@opam/opium_core": "rgrinberg/opium:opium_core.opam",
     "@opam/reason": "^3.5.0",

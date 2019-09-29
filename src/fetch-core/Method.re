@@ -34,3 +34,6 @@ let toString =
   | `PUT => "PUT"
   | `TRACE => "TRACE"
   | `Other(v) => v;
+
+let of_string = ofString;
+let to_string = toString;
