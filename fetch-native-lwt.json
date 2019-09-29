@@ -4,7 +4,7 @@
   "description": "Fetch client (Lwt) for native ReasonML/OCaml",
   "license": "MIT",
   "esy": {
-    "build": "dune build --profile=release ./src/fetch-native-lwt",
+    "build": "dune build --profile=release --only-packages=fetch-native-lwt --root .",
     "buildDev": "refmterr dune build @all"
   },
   "scripts": {
@@ -13,7 +13,7 @@
   "dependencies": {
     "@opam/dune": "^1.11.1",
     "@opam/reason": "^3.5.0",
-    "fetch-core": "*",
+    "fetch-core": "github:lessp/reason-fetch:fetch-core.json#c85c4f9",
     "@reason-native-web/morph_client": "^0.1.1",
     "ocaml": "<4.8.0"
   },
@@ -24,7 +24,6 @@
     "@opam/utop": "2.4.2"
   },
   "resolutions": {
-    "fetch-core": "link:./fetch-core.json",
     "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
     "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
     "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#76b461bed081c64908fb1fdfa076ab2c936ca622"

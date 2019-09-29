@@ -1,5 +1,3 @@
-module Fetch = Fetch_native_lwt;
-
 let handleResponse =
   Fetch.Response.(
     fun
