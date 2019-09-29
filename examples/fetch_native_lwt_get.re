@@ -1,5 +1,3 @@
-module Fetch = Fetch_native_lwt;
-
 Fetch.(
   fetch("https://httpbin.org/get", ())
   |> Lwt.map(
