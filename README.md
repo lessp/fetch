@@ -18,8 +18,6 @@ Feel free to open an issue and/or grabbing one of the [open issues](https://gith
 
 ## Contributors
 
-Brought to you by:
-
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
