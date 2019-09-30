@@ -88,11 +88,21 @@ type t = [ standard | `Other(int)];
 let toCode: t => int;
 let ofCode: int => t;
 
+let to_code: t => int;
+let of_code: int => t;
+
 let isInformational: t => bool;
 let isSuccessful: t => bool;
 let isRedirect: t => bool;
 let isClientError: t => bool;
 let isServerError: t => bool;
 let isError: t => bool;
+
+let is_informational: t => bool;
+let is_successful: t => bool;
+let is_redirect: t => bool;
+let is_client_error: t => bool;
+let is_server_error: t => bool;
+let is_error: t => bool;
 
 let make: int => t;

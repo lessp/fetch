@@ -1,4 +1,4 @@
-open Fetch_core.Method;
+open Fetch_Core.Method;
 
 module ToString = {
   let toStringTest = () => {

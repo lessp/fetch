@@ -217,6 +217,9 @@ let ofCode =
   | 511 => `NetworkAuthenticationRequired
   | c => `Other(c);
 
+let to_code = toCode;
+let of_code = ofCode;
+
 let isSuccessful =
   fun
   | #success => true
@@ -247,5 +250,12 @@ let isError =
   | #serverError
   | #clientError => true
   | _ => false;
+
+let is_informational = isInformational;
+let is_successful = isSuccessful;
+let is_redirect = isRedirect;
+let is_client_error = isClientError;
+let is_server_error = isServerError;
+let is_error = isError;
 
 let make = ofCode;
