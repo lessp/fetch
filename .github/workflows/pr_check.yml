@@ -26,7 +26,7 @@ jobs:
       run: esy dune build @fmt --root .
     - name: Run tests
       run: |
-        esy dune exec test/method.exe -o ./test/__logs__ 
-        esy dune exec test/status.exe -o ./test/__logs__ 
+        esy dune exec test/method.exe -- -o ./test/__logs__ 
+        esy dune exec test/status.exe -- -o ./test/__logs__ 
     - name: Run example
       run: esy example
