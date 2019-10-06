@@ -15,6 +15,7 @@
     "example": "esy refmterr dune exec examples/fetch_native_lwt_get.exe",
     "format": "esy dune build @fmt --auto-promote",
     "test": "esy dune runtest test",
+    "test:watch": "esy dune runtest test --watch",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
   },
