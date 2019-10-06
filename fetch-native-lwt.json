@@ -11,8 +11,8 @@
     "format": "esy dune build @fmt --auto-promote"
   },
   "dependencies": {
-    "@opam/dune": "^1.11.1",
-    "@opam/reason": "^3.5.0",
+    "@opam/dune": "*",
+    "@opam/reason": "*",
     "fetch-core": "github:lessp/reason-fetch:fetch-core.json#c85c4f9",
     "@reason-native-web/morph_client": "^0.1.1",
     "ocaml": "<4.8.0"

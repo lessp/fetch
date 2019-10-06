@@ -21,9 +21,9 @@
   "dependencies": {
     "fetch-native-lwt": "*",
     "fetch-core": "*",
-    "@opam/dune": "^1.11.1",
+    "@opam/dune": "*",
     "@opam/opium_core": "rgrinberg/opium:opium_core.opam",
-    "@opam/reason": "^3.5.0",
+    "@opam/reason": "*",
     "@reason-native-web/morph_client": "^0.1.1",
     "ocaml": "<4.8.0"
   },
