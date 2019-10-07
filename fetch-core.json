@@ -11,8 +11,8 @@
     "format": "esy dune build @fmt --auto-promote"
   },
   "dependencies": {
-    "@opam/dune": "^1.11.1",
-    "@opam/reason": "^3.5.0",
+    "@opam/dune": "*",
+    "@opam/reason": "*",
     "ocaml": "<4.8.0"
   },
   "devDependencies": {
