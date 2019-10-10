@@ -5,9 +5,10 @@ let handleResponse =
     | _ => "That's anything but successful. :-("
   );
 
-Fetch.(
-  fetch("http://httpbin.org/get", ())
-  |> Lwt.map(handleResponse)
-  |> Lwt.map(Console.log)
-  |> Lwt_main.run
-);
+let fetchWithAuth = Fetch.fetch(~headers=[("Authorisation", "Bearer xyz")]);
+let fetchWithAuthAndBody = fetchWithAuth(~body="Hello World!");
+
+fetchWithAuthAndBody("https://httpbin.org/get")
+|> Lwt.map(handleResponse)
+|> Lwt.map(Console.log)
+|> Lwt_main.run;
