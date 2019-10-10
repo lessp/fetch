@@ -7,6 +7,6 @@ module Make =
   module Method = Method;
   module Headers = Headers;
 
-  let fetch = (~body=?, ~headers=[], ~meth=`GET, url, ()) =>
+  let fetch = (~body=?, ~headers=[], ~meth=`GET, url) =>
     Request.create(~body, ~headers, ~meth, ~url) |> IO.make;
 };

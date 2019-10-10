@@ -4,6 +4,9 @@ Fetch libraries and interface for ReasonML/OCaml.
 
 Fetch aims to provide a common interface over different HTTP and Promise-implementations in the ReasonML/OCaml ecosystem.
 
+> A note is that Fetch is still in a phase where we're figuring out the API. In other words, the API
+> may change and input is welcome!
+
 ## [Fetch Core](./src/fetch-core)
 
 Provides a functor for creating and providing your own Fetch-implementation. The goal is to be pluggable with any HTTP or Promise-implementation provided it conforms to the common interface.

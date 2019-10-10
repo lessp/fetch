@@ -46,8 +46,7 @@ module type FETCH = {
       ~body: string=?,
       ~headers: list(Headers.t)=?,
       ~meth: Method.t=?,
-      string,
-      unit
+      string
     ) =>
     t;
 };
