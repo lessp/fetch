@@ -13,11 +13,12 @@ jobs:
         os: [ubuntu-latest, macOS-latest, windows-latest]
     steps:
     - uses: actions/setup-node@v1
-      if: matrix.os == windows-latest
-      run: choco install pkgconfiglite
       with:
         node-version: 10
     - uses: actions/checkout@v1
+    - name: Install pkg-config (Windows)
+      if: matrix.os == windows-latest
+      run: choco install pkgconfiglite
     - name: Install esy
       run: npm install -g esy@0.5.8
     - name: Install dependencies
