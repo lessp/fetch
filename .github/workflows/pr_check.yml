@@ -17,7 +17,7 @@ jobs:
         node-version: 10
     - uses: actions/checkout@v1
     - name: Install pkg-config (Windows)
-      if: matrix.os == windows-latest
+      if: matrix.os == 'windows-latest'
       run: choco install pkgconfiglite
     - name: Install esy
       run: npm install -g esy@0.5.8
