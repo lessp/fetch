@@ -24,4 +24,5 @@ jobs:
     - name: NPM Package 
       run: |
         cd src/${{ matrix.package }}
+        ls -lah
         npm pack 

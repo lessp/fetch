@@ -1,32 +1,32 @@
-name: Check PR
+# name: Check PR
 
-on:
-  pull_request:
-    branches:
-    - master
+# on:
+#   pull_request:
+#     branches:
+#     - master
 
-jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macOS-latest, windows-latest]
-    steps:
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 10
-    - uses: actions/checkout@v1
-    - name: Install esy
-      run: npm install -g esy@0.5.8
-    - name: Install dependencies
-      run: esy install
-    - name: Build
-      run: esy build
-    - name: Check code formatting
-      run: esy dune build @fmt --root .
-    - name: Run tests
-      run: |
-        esy dune exec test/method.exe -- -o ./test/__logs__ 
-        esy dune exec test/status.exe -- -o ./test/__logs__ 
-    - name: Run example
-      run: esy example
+# jobs:
+#   build:
+#     runs-on: ${{ matrix.os }}
+#     strategy:
+#       matrix:
+#         os: [ubuntu-latest, macOS-latest, windows-latest]
+#     steps:
+#     - uses: actions/setup-node@v1
+#       with:
+#         node-version: 10
+#     - uses: actions/checkout@v1
+#     - name: Install esy
+#       run: npm install -g esy@0.5.8
+#     - name: Install dependencies
+#       run: esy install
+#     - name: Build
+#       run: esy build
+#     - name: Check code formatting
+#       run: esy dune build @fmt --root .
+#     - name: Run tests
+#       run: |
+#         esy dune exec test/method.exe -- -o ./test/__logs__ 
+#         esy dune exec test/status.exe -- -o ./test/__logs__ 
+#     - name: Run example
+#       run: esy example
