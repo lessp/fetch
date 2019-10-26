@@ -12,10 +12,12 @@
   },
   "dependencies": {
     "@opam/dune": "*",
-    "@opam/reason": "*",
     "fetch-core": "github:lessp/reason-fetch:fetch-core.json#987722f",
-    "@reason-native-web/morph_client": "^0.1.1",
-    "ocaml": "<4.8.0"
+    "@reason-native-web/morph_client": "^0.1.1"
+  },
+  "peerDependencies": {
+    "@opam/reason": "*",
+    "ocaml": "*"
   },
   "devDependencies": {
     "refmterr": "^3.2.2",
