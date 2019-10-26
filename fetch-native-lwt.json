@@ -27,7 +27,7 @@
     "refmterr": "*"
   },
   "resolutions": {
-    "fetch-core": "link:./fetch-core.json",
+    "fetch-core": "github:lessp/reason-fetch:fetch-core.json#0d8a554",
     "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
     "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
     "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#76b461bed081c64908fb1fdfa076ab2c936ca622"
