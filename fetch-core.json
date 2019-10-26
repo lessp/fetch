@@ -11,16 +11,17 @@
     "format": "esy dune build @fmt --auto-promote"
   },
   "dependencies": {
-    "@opam/dune": "*"
+    "@opam/dune": "*",
+    "@opam/reason": "*"
   },
   "peerDependencies": {
-    "@opam/reason": "*",
-    "ocaml": "*"
+    "ocaml": ">=4.6.0"
   },
   "devDependencies": {
-    "refmterr": "^3.2.2",
     "@opam/merlin": "^3.3.2",
-    "@opam/rtop": "3.5.0",
-    "@opam/utop": "2.4.2"
+    "@opam/rtop": "*",
+    "@opam/utop": "*",
+    "ocaml": "<4.9.0",
+    "refmterr": "*"
   }
 }

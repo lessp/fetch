@@ -12,20 +12,22 @@
   },
   "dependencies": {
     "@opam/dune": "*",
-    "fetch-core": "github:lessp/reason-fetch:fetch-core.json#987722f",
+    "@opam/reason": "*",
+    "fetch-core": "*",
     "@reason-native-web/morph_client": "^0.1.1"
   },
   "peerDependencies": {
-    "@opam/reason": "*",
-    "ocaml": "*"
+    "ocaml": ">=4.6.0"
   },
   "devDependencies": {
-    "refmterr": "^3.2.2",
     "@opam/merlin": "^3.3.2",
-    "@opam/rtop": "3.5.0",
-    "@opam/utop": "2.4.2"
+    "@opam/rtop": "*",
+    "@opam/utop": "*",
+    "ocaml": "<4.9.0",
+    "refmterr": "*"
   },
   "resolutions": {
+    "fetch-core": "link:./fetch-core.json",
     "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
     "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
     "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#76b461bed081c64908fb1fdfa076ab2c936ca622"
