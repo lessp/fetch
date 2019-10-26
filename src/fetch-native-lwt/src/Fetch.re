@@ -1,11 +1,11 @@
 module IO = {
   module Response = {
     module Status = {
-      include Fetch_core.Response.Status;
+      include Fetch_Core.Response.Status;
     };
 
     module Headers = {
-      include Fetch_core.Headers;
+      include Fetch_Core.Headers;
     };
 
     module Body = {
@@ -38,7 +38,7 @@ module IO = {
 
   type t = Lwt.t(result(Response.t, exn));
 
-  let make = ({headers, body, meth, url}: Fetch_core.Request.t) => {
+  let make = ({headers, body, meth, url}: Fetch_Core.Request.t) => {
     Lwt.Infix.(
       Morph.Request.make(
         ~meth,
@@ -74,4 +74,4 @@ module IO = {
   };
 };
 
-include Fetch_core.Fetchify.Make(IO);
+include Fetch_Core.Fetchify.Make(IO);
