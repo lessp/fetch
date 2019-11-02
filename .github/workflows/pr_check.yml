@@ -10,29 +10,30 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macOS-latest, windows-latest]
+        os: windows-latest
+        # os: [ubuntu-latest, macOS-latest, windows-latest]
     steps:
       - uses: actions/setup-node@v1
         with:
           node-version: 10
       - uses: actions/checkout@v1
-      - name: Install pkg-config (Windows)
-        if: matrix.os == 'windows-latest'
-        run: choco install pkgconfiglite
-      - name: Run pkg-config openssl (Windows)
-        if: matrix.os == 'windows-latest'
-        run: pkg-config openssl
-    # - name: Install esy
-    #   run: npm install -g esy@0.5.8
-    # - name: Install dependencies
-    #   run: esy install
-    # - name: Build
-    #   run: esy build
-    # - name: Check code formatting
-    #   run: esy dune build @fmt --root .
-    # - name: Run tests
-    #   run: |
-    #     esy dune exec test/Method.exe -- -o ./test/__logs__
-    #     esy dune exec test/Status.exe -- -o ./test/__logs__
-    # - name: Run example
-    #   run: esy example
+      # - name: Install pkg-config (Windows)
+      #   if: matrix.os == 'windows-latest'
+      #   run: choco install pkgconfiglite
+      # - name: Run pkg-config openssl (Windows)
+      #   if: matrix.os == 'windows-latest'
+      #   run: pkg-config openssl
+      - name: Install esy
+        run: npm install -g esy@0.5.8
+      - name: Install dependencies
+        run: esy install
+      - name: Build
+        run: esy build
+      - name: Check code formatting
+        run: esy dune build @fmt --root .
+      - name: Run tests
+        run: |
+          esy dune exec test/Method.exe -- -o ./test/__logs__
+          esy dune exec test/Status.exe -- -o ./test/__logs__
+      - name: Run example
+        run: esy example
