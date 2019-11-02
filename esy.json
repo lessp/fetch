@@ -26,14 +26,14 @@
     "@opam/opium_core": "rgrinberg/opium:opium_core.opam",
     "@opam/reason": "*",
     "@reason-native-web/morph_client": "^0.1.1",
-    "ocaml": "<4.8.0"
+    "ocaml": "<4.9.0"
   },
   "devDependencies": {
     "all-contributors-cli": "6.9.1",
     "@opam/alcotest": "0.8.5",
     "@opam/js_of_ocaml-compiler": "3.4.0",
     "@opam/merlin": "^3.3.2",
-    "@opam/rtop": "3.5.0",
+    "@opam/rtop": "3.5.2",
     "@opam/utop": "2.4.2",
     "@reason-native/console": "^0.1.0",
     "refmterr": "^3.2.2"

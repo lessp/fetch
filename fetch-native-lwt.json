@@ -13,15 +13,18 @@
   "dependencies": {
     "@opam/dune": "*",
     "@opam/reason": "*",
-    "fetch-core": "github:lessp/reason-fetch:fetch-core.json#987722f",
-    "@reason-native-web/morph_client": "^0.1.1",
-    "ocaml": "<4.8.0"
+    "fetch-core": "github:lessp/reason-fetch:fetch-core.json#641226b",
+    "@reason-native-web/morph_client": "^0.1.1"
+  },
+  "peerDependencies": {
+    "ocaml": ">=4.6.0"
   },
   "devDependencies": {
-    "refmterr": "^3.2.2",
     "@opam/merlin": "^3.3.2",
-    "@opam/rtop": "3.5.0",
-    "@opam/utop": "2.4.2"
+    "@opam/rtop": "*",
+    "@opam/utop": "*",
+    "ocaml": "<4.9.0",
+    "refmterr": "*"
   },
   "resolutions": {
     "@opam/conf-openssl": "esy-packages/esy-openssl#306bb87",

@@ -18,7 +18,7 @@ The goal is to be pluggable with any HTTP or Promise-implementation provided it 
 E.g.
 
 ```re
-module Fetch = Fetch_core.Fetchify.Make({
+module Fetch = Fetch_Core.Fetchify.Make({
   module Response = {
     /* your implementation */
   };
