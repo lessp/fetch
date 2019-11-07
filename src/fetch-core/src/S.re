@@ -8,6 +8,7 @@ module type Body = {
 module type Response = {
   module Status: (module type of Status);
   module Body: Body;
+  module Headers: (module type of Headers);
 
   type t = {
     body: Body.t,
