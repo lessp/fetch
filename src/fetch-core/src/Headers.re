@@ -11,8 +11,8 @@ let toString = headers => {
       Buffer.add_string(buffer, "\r\n");
     },
     headers,
-  )
-  ;
+  );
+
   Buffer.add_string(buffer, "\r\n");
   Buffer.contents(buffer);
 };
