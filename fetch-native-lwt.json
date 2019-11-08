@@ -13,7 +13,7 @@
   "dependencies": {
     "@opam/dune": "*",
     "@opam/reason": "*",
-    "fetch-core": "github:lessp/reason-fetch:fetch-core.json#0d8a554",
+    "fetch-core": "github:lessp/reason-fetch:fetch-core.json#641226b",
     "@reason-native-web/morph_client": "^0.1.1"
   },
   "peerDependencies": {
