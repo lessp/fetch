@@ -13,7 +13,7 @@
   "dependencies": {
     "@opam/dune": "*",
     "@opam/reason": "*",
-    "fetch-core": "*",
+    "fetch-core": "0.1.0-alpha.1",
     "@reason-native-web/morph_client": "^0.1.1"
   },
   "peerDependencies": {
