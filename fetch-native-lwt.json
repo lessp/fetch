@@ -14,7 +14,8 @@
     "@opam/dune": "*",
     "@opam/reason": "*",
     "fetch-core": "0.1.0-alpha.2",
-    "@reason-native-web/morph_client": "^0.1.1"
+    "@opam/cohttp-lwt-unix": "*",
+    "@opam/cohttp": "*"
   },
   "peerDependencies": {
     "ocaml": ">=4.6.0"
@@ -27,9 +28,6 @@
     "refmterr": "*"
   },
   "resolutions": {
-    "@opam/conf-libssl": "esy-packages/esy-openssl:package.json#860ad7fdce781ad1c1c9349420004d49100178af",
-    "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
-    "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
-    "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#76b461bed081c64908fb1fdfa076ab2c936ca622"
+    "@opam/conf-libssl": "esy-packages/esy-openssl:package.json#860ad7fdce781ad1c1c9349420004d49100178af"
   }
 }

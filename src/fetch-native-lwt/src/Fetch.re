@@ -9,7 +9,7 @@ module IO = {
     };
 
     module Body = {
-      type t = Morph.Response.body;
+      type t = Cohttp.Body.t;
 
       let toString = body => {
         switch (body) {
@@ -40,33 +40,39 @@ module IO = {
 
   let make = ({headers, body, meth, url}: Fetch_Core.Request.t) => {
     Lwt.Infix.(
-      Morph.Request.make(
-        ~meth,
-        ~headers=headers |> List.append([("User-Agent", "reason-fetch")]),
-        ~read_body=
-          () =>
-            Lwt.return(
-              body
-              |> (
-                fun
-                | None => ""
-                | Some(body) => body
-              ),
-            ),
-        url,
+      Cohttp.(
+        Cohttp_lwt_unix.Client.call(
+          ~headers=Header.of_list(headers),
+          ~body={
+            switch (body) {
+            | Some(body) => Cohttp_lwt.Body.of_string(body)
+            | None => Cohttp_lwt.Body.empty
+            };
+          },
+          Code.method_of_string(Fetch_Core.Method.toString(meth)),
+          Uri.of_string(url),
+        )
       )
-      |> Morph_client.handle
       >>= (
-        ({Morph.Response.status, body, headers}) => {
-          Lwt.return(
-            Ok(
-              Response.make(
-                ~status=Response.Status.make(status |> Morph.Status.to_code),
-                ~body,
-                ~headers,
-                ~url,
-              ),
-            ),
+        ((resp, body)) => {
+          let status =
+            resp |> Cohttp.Response.status |> Cohttp.Code.code_of_status;
+
+          let headers =
+            resp |> Cohttp.Response.headers |> Cohttp.Header.to_list;
+
+          body
+          |> Cohttp_lwt.Body.to_string
+          >|= (
+            body =>
+              Ok(
+                Response.make(
+                  ~status=Response.Status.make(status),
+                  ~body=Cohttp.Body.of_string(body),
+                  ~headers,
+                  ~url,
+                ),
+              )
           );
         }
       )
