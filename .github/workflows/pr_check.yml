@@ -10,8 +10,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest]
-        # os: [ubuntu-latest, macOS-latest, windows-latest]
+        os: [ubuntu-latest, macOS-latest, windows-latest]
     steps:
       - uses: actions/setup-node@v1
         with:
@@ -32,8 +31,6 @@ jobs:
       - name: Check code formatting
         run: esy dune build @fmt --root .
       - name: Run tests
-        run: |
-          esy dune exec test/Method.exe -- -o ./test/__logs__
-          esy dune exec test/Status.exe -- -o ./test/__logs__
+        run: esy test
       - name: Run example
         run: esy example

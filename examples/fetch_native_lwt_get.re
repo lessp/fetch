@@ -1,10 +1,11 @@
 Fetch.(
-  fetch("https://httpbin.org/get")
+  get("https://httpbin.org/get")
   |> Lwt.map(
        fun
-       | Ok({Response.body, status, url, _}) => {
+       | Ok({Response.body, status, url, headers}) => {
            Printf.printf(
-             "Status-Code: %d\nBody: %s\nUrl: %s",
+             "Headers: \n%sStatus-Code: %d\nBody: %s\nUrl: %s",
+             Response.Headers.toString(headers),
              Response.Status.toCode(status),
              Response.Body.toString(body),
              url,

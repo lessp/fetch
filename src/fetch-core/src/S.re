@@ -8,6 +8,7 @@ module type Body = {
 module type Response = {
   module Status: (module type of Status);
   module Body: Body;
+  module Headers: (module type of Headers);
 
   type t = {
     body: Body.t,
@@ -49,4 +50,9 @@ module type FETCH = {
       string
     ) =>
     t;
+
+  let get: (~body: string=?, ~headers: list(Headers.t)=?, string) => t;
+  let post: (~body: string=?, ~headers: list(Headers.t)=?, string) => t;
+  let put: (~body: string=?, ~headers: list(Headers.t)=?, string) => t;
+  let delete: (~body: string=?, ~headers: list(Headers.t)=?, string) => t;
 };
