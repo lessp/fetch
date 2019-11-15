@@ -1,5 +1,5 @@
 Fetch.(
-  fetch("https://httpbin.org/get")
+  get("https://httpbin.org/get")
   |> Lwt.map(
        fun
        | Ok({Response.body, status, url, _}) => {

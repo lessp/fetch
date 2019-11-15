@@ -5,7 +5,7 @@ let handleResponse =
     | _ => "That's anything but successful. :-("
   );
 
-let fetchWithAuth = Fetch.fetch(~headers=[("Authorisation", "Bearer xyz")]);
+let fetchWithAuth = Fetch.get(~headers=[("Authorisation", "Bearer xyz")]);
 let fetchWithAuthAndBody = fetchWithAuth(~body="Hello World!");
 
 fetchWithAuthAndBody("https://httpbin.org/get")
