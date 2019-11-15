@@ -50,4 +50,9 @@ module type FETCH = {
       string
     ) =>
     t;
+
+  let get: (~body: string=?, ~headers: list(Headers.t)=?, string) => t;
+  let post: (~body: string=?, ~headers: list(Headers.t)=?, string) => t;
+  let put: (~body: string=?, ~headers: list(Headers.t)=?, string) => t;
+  let delete: (~body: string=?, ~headers: list(Headers.t)=?, string) => t;
 };
