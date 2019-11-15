@@ -22,8 +22,8 @@ depexts: [
   ["openssl"] {os-distribution = "arch"}
   ["libopenssl-devel"] {os-family = "suse"}
 ]
-synopsis: "Virtual package relying on an OpenSSL system installation"
+synopsis: "Virtual package relying on an OpenSSL library system installation"
 description:
-  "This package can only install if OpenSSL is installed on the system."
+  "This package can only install if the OpenSSL library is installed on the system."
 extra-files: ["osx-build.sh" "md5=e216c6189d0dfb4185521c8ace09fe40"]
 flags: conf
