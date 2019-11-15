@@ -1,4 +1,3 @@
-type name = string;
-type value = string;
+type t = (string, string);
 
-type t = (name, value);
+let toString: list(t) => string;
