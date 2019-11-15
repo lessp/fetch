@@ -10,18 +10,19 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macOS-latest, windows-latest]
+        # os: [ubuntu-latest, macOS-latest, windows-latest]
+        os: [windows-latest]
     steps:
       - uses: actions/setup-node@v1
         with:
           node-version: 10
       - uses: actions/checkout@v1
-      # - name: Install pkg-config (Windows)
-      #   if: matrix.os == 'windows-latest'
-      #   run: choco install pkgconfiglite
-      # - name: Run pkg-config openssl (Windows)
-      #   if: matrix.os == 'windows-latest'
-      #   run: pkg-config openssl
+      - name: Install pkg-config (Windows)
+        if: matrix.os == 'windows-latest'
+        run: choco install pkgconfiglite
+      - name: Run pkg-config openssl (Windows)
+        if: matrix.os == 'windows-latest'
+        run: pkg-config openssl
       - name: Install esy
         run: npm install -g esy@0.5.8
       - name: Install dependencies
