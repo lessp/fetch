@@ -1,5 +1,7 @@
 # Fetch
 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 Fetch libraries and interface for ReasonML/OCaml.
 
 Fetch aims to provide a common interface over different HTTP and Promise-implementations in the ReasonML/OCaml ecosystem.
