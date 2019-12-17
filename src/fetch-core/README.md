@@ -1,5 +1,7 @@
 # Fetch
 
+[![npm version](https://badge.fury.io/js/fetch-core.svg)](https://badge.fury.io/js/fetch-core)
+
 A fetch interface/functor for ReasonML/OCaml.
 
 # Table of Contents
