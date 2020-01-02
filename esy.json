@@ -5,13 +5,14 @@
   "license": "MIT",
   "esy": {
     "build": ["dune build -p fetch-core", "dune build -p fetch-native-lwt"],
+    "buildDev": "refmterr dune build @all",
     "install": [
       "esy-installer fetch-core.install",
       "esy-installer fetch-native-lwt.install"
     ]
   },
   "scripts": {
-    "example": "esy dune exec examples/fetch_native_lwt_get.exe",
+    "example": "esy refmterr dune exec examples/fetch_native_lwt_get.exe",
     "format": "esy dune build @fmt --auto-promote",
     "test": "esy dune exec FetchTestRunner",
     "test:watch": "esy dune runtest test --watch --force",
@@ -26,12 +27,13 @@
     "ocaml": "~4.9.0"
   },
   "devDependencies": {
-    "@reason-native/rely": "*",
     "@opam/merlin": "^3.3.2",
     "@opam/rtop": "3.5.2",
     "@opam/utop": "2.4.2",
     "@reason-native/console": "^0.1.0",
-    "all-contributors-cli": "6.9.1"
+    "@reason-native/rely": "*",
+    "all-contributors-cli": "6.9.1",
+    "refmterr": "*"
   },
   "resolutions": {
     "piaf": "lessp/piaf#b8669c1",
