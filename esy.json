@@ -5,16 +5,15 @@
   "license": "MIT",
   "esy": {
     "build": ["dune build -p fetch-core", "dune build -p fetch-native-lwt"],
-    "buildDev": "refmterr dune build @all",
     "install": [
       "esy-installer fetch-core.install",
       "esy-installer fetch-native-lwt.install"
     ]
   },
   "scripts": {
-    "example": "esy refmterr dune exec examples/fetch_native_lwt_get.exe",
+    "example": "esy dune exec examples/fetch_native_lwt_get.exe",
     "format": "esy dune build @fmt --auto-promote",
-    "test": "esy dune runtest test --force",
+    "test": "esy dune exec FetchTestRunner",
     "test:watch": "esy dune runtest test --watch --force",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
@@ -23,26 +22,26 @@
     "fetch-native-lwt": "*",
     "fetch-core": "*",
     "@opam/dune": "*",
-    "@opam/opium_core": "rgrinberg/opium:opium_core.opam",
     "@opam/reason": "*",
-    "@reason-native-web/morph_client": "^0.1.1",
-    "ocaml": "<4.9.0"
+    "ocaml": "~4.9.0"
   },
   "devDependencies": {
-    "all-contributors-cli": "6.9.1",
-    "@opam/alcotest": "0.8.5",
-    "@opam/js_of_ocaml-compiler": "3.4.0",
+    "@reason-native/rely": "*",
     "@opam/merlin": "^3.3.2",
     "@opam/rtop": "3.5.2",
     "@opam/utop": "2.4.2",
     "@reason-native/console": "^0.1.0",
-    "refmterr": "^3.2.2"
+    "all-contributors-cli": "6.9.1"
   },
   "resolutions": {
+    "piaf": "lessp/piaf#b8669c1",
     "fetch-core": "link:./fetch-core.json",
     "fetch-native-lwt": "link:./fetch-native-lwt.json",
-    "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
-    "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
-    "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#76b461bed081c64908fb1fdfa076ab2c936ca622"
+    "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#90e7c87",
+    "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#90e7c87",
+    "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#90e7c87",
+    "@opam/conf-libssl": "esy-packages/esy-openssl#648930f",
+    "@opam/ssl": "savonet/ocaml-ssl:ssl.opam#fbffa9b",
+    "@opam/conf-libev": "esy-packages/libev:package.json#0b5eb66"
   }
 }

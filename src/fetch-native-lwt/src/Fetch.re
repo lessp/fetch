@@ -9,16 +9,12 @@ module IO = {
     };
 
     module Body = {
-      type t = Cohttp.Body.t;
+      type t = string;
 
-      let toString = body => {
-        switch (body) {
-        | `String(body) => body
-        | _ => ""
-        };
-      };
+      let make = body => body;
 
-      let ofString = body => `String(body);
+      let toString = body => body;
+      let ofString = body => body;
     };
 
     type t = {
@@ -36,47 +32,52 @@ module IO = {
     };
   };
 
-  type t = Lwt.t(result(Response.t, exn));
+  type t = Lwt.t(result(Response.t, string));
 
   let make = ({headers, body, meth, url}: Fetch_Core.Request.t) => {
-    Lwt.Infix.(
-      Cohttp.(
-        Cohttp_lwt_unix.Client.call(
-          ~headers=Header.of_list(headers),
-          ~body={
-            switch (body) {
-            | Some(body) => Cohttp_lwt.Body.of_string(body)
-            | None => Cohttp_lwt.Body.empty
-            };
-          },
-          Code.method_of_string(Fetch_Core.Method.toString(meth)),
-          Uri.of_string(url),
+    let result =
+      Lwt.Infix.(
+        Piaf.(
+          Client.Oneshot.request(
+            ~config={...Piaf.Config.default, follow_redirects: true},
+            ~headers,
+            ~body={
+              switch (body) {
+              | Some(body) => Body.of_string(body)
+              | None => Body.empty
+              };
+            },
+            ~meth=Method.of_string(Fetch_Core.Method.toString(meth)),
+            Uri.of_string(url),
+          )
         )
-      )
-      >>= (
-        ((resp, body)) => {
-          let status =
-            resp |> Cohttp.Response.status |> Cohttp.Code.code_of_status;
+        >>= (
+          fun
+          | Ok((resp, body)) => {
+              let status = resp.status |> Piaf.Status.to_code;
+              let headers = resp.headers |> Piaf.Headers.to_list;
 
-          let headers =
-            resp |> Cohttp.Response.headers |> Cohttp.Header.to_list;
+              body
+              |> Piaf.Body.to_string
+              >>= (
+                body =>
+                  Lwt.return(
+                    Ok(
+                      Response.make(
+                        ~status=Response.Status.make(status),
+                        ~body=Response.Body.make(body),
+                        ~headers,
+                        ~url,
+                      ),
+                    ),
+                  )
+              );
+            }
+          | Error(e) => Lwt.return(Error(e))
+        )
+      );
 
-          body
-          |> Cohttp_lwt.Body.to_string
-          >|= (
-            body =>
-              Ok(
-                Response.make(
-                  ~status=Response.Status.make(status),
-                  ~body=Cohttp.Body.of_string(body),
-                  ~headers,
-                  ~url,
-                ),
-              )
-          );
-        }
-      )
-    );
+    result;
   };
 };
 

@@ -14,20 +14,27 @@
     "@opam/dune": "*",
     "@opam/reason": "*",
     "fetch-core": "0.1.0-alpha.2",
-    "@opam/cohttp-lwt-unix": "*",
-    "@opam/cohttp": "*"
+    "piaf": "*"
   },
   "peerDependencies": {
-    "ocaml": ">=4.6.0"
+    "@opam/ocaml": "~4.9.0"
   },
   "devDependencies": {
     "@opam/merlin": "^3.3.2",
     "@opam/rtop": "*",
     "@opam/utop": "*",
-    "ocaml": "<4.9.0",
+    "ocaml": "~4.8.0",
     "refmterr": "*"
   },
   "resolutions": {
-    "@opam/conf-libssl": "esy-packages/esy-openssl:package.json#860ad7fdce781ad1c1c9349420004d49100178af"
+    "piaf": "link:../piaf",
+    "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#90e7c87",
+    "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#90e7c87",
+    "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#90e7c87",
+    "@opam/h2": "anmonteiro/ocaml-h2:h2.opam#bf0e0e0",
+    "@opam/h2-lwt": "anmonteiro/ocaml-h2:h2-lwt.opam#bf0e0e0",
+    "@opam/h2-lwt-unix": "anmonteiro/ocaml-h2:h2-lwt-unix.opam#bf0e0e0",
+    "@opam/conf-libssl": "esy-packages/esy-openssl#860ad7f",
+    "@opam/ssl": "savonet/ocaml-ssl:ssl.opam#fbffa9b"
   }
 }

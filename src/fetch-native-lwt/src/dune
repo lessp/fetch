@@ -1,4 +1,4 @@
 (library
  (name Fetch)
  (public_name fetch-native-lwt)
- (libraries fetch-core cohttp cohttp-lwt-unix))
+ (libraries fetch-core piaf))

@@ -1,0 +1,6 @@
+(library
+ (name Fetch_Core_Test)
+ (library_flags
+  (-linkall -g))
+ (modules (:standard))
+ (libraries rely.lib fetch-core))
