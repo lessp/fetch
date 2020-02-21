@@ -5,7 +5,7 @@
   "license": "MIT",
   "esy": {
     "build": "dune build --profile=release --only-packages=fetch-native-lwt --root=.",
-    "buildDev": "refmterr dune build @all"
+    "buildDev": "refmterr dune build -p #{self.name} "
   },
   "scripts": {
     "format": "esy dune build @fmt --auto-promote"
@@ -14,10 +14,7 @@
     "@opam/dune": "*",
     "@opam/reason": "*",
     "fetch-core": "0.1.0-alpha.2",
-    "piaf": "lessp/piaf#b8669c1"
-  },
-  "peerDependencies": {
-    "@opam/ocaml": "~4.9.0"
+    "@opam/piaf": "anmonteiro/piaf:piaf.opam#e99ae27f946017417528163383188ca641595df6"
   },
   "devDependencies": {
     "@opam/merlin": "^3.3.2",
@@ -27,13 +24,9 @@
     "refmterr": "*"
   },
   "resolutions": {
-    "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#90e7c87",
-    "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#90e7c87",
-    "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#90e7c87",
-    "@opam/h2": "anmonteiro/ocaml-h2:h2.opam#bf0e0e0",
-    "@opam/h2-lwt": "anmonteiro/ocaml-h2:h2-lwt.opam#bf0e0e0",
-    "@opam/h2-lwt-unix": "anmonteiro/ocaml-h2:h2-lwt-unix.opam#bf0e0e0",
-    "@opam/conf-libssl": "esy-packages/esy-openssl#860ad7f",
-    "@opam/ssl": "savonet/ocaml-ssl:ssl.opam#fbffa9b"
+    "@opam/ssl": "savonet/ocaml-ssl:ssl.opam#6b75fac",
+    "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#9308e34",
+    "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#9308e34",
+    "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#9308e34"
   }
 }

@@ -9,12 +9,24 @@ module IO = {
     };
 
     module Body = {
-      type t = string;
+      type t = Piaf.Body.t;
 
-      let make = body => body;
+      let toString = body => {
+        let bodyAsString = ref("");
+        Lwt.Infix.(
+          Piaf.Body.to_string(body)
+          >|= (
+            bodyString => {
+              bodyAsString := bodyString;
 
-      let toString = body => body;
-      let ofString = body => body;
+              Lwt.return();
+            }
+          )
+          |> ignore
+        );
+        bodyAsString^;
+      };
+      let ofString = body => Piaf.Body.of_string(body);
     };
 
     type t = {
@@ -35,49 +47,41 @@ module IO = {
   type t = Lwt.t(result(Response.t, string));
 
   let make = ({headers, body, meth, url}: Fetch_Core.Request.t) => {
-    let result =
-      Lwt.Infix.(
-        Piaf.(
-          Client.Oneshot.request(
-            ~config={...Piaf.Config.default, follow_redirects: true},
-            ~headers,
-            ~body={
-              switch (body) {
-              | Some(body) => Body.of_string(body)
-              | None => Body.empty
-              };
-            },
-            ~meth=Method.of_string(Fetch_Core.Method.toString(meth)),
-            Uri.of_string(url),
-          )
-        )
-        >>= (
-          fun
-          | Ok((resp, body)) => {
-              let status = resp.status |> Piaf.Status.to_code;
-              let headers = resp.headers |> Piaf.Headers.to_list;
+    let body =
+      switch (body) {
+      | Some(body) => Piaf.Body.of_string(body)
+      | None => Piaf.Body.empty
+      };
 
-              body
-              |> Piaf.Body.to_string
-              >>= (
-                body =>
-                  Lwt.return(
-                    Ok(
-                      Response.make(
-                        ~status=Response.Status.make(status),
-                        ~body=Response.Body.make(body),
-                        ~headers,
-                        ~url,
-                      ),
+    Lwt.Infix.(
+      Piaf.Client.Oneshot.request(
+        ~meth=Piaf.Method.of_string(Fetch_Core.Method.toString(meth)),
+        ~headers=headers |> List.append([("User-Agent", "reason-fetch")]),
+        ~body,
+        url |> Uri.of_string,
+      )
+      >>= (
+        res =>
+          switch (res) {
+          | Ok(response) =>
+            Lwt.return(
+              Ok(
+                Response.make(
+                  ~status=
+                    Response.Status.make(
+                      response |> Piaf.Response.status |> Piaf.Status.to_code,
                     ),
-                  )
-              );
-            }
-          | Error(e) => Lwt.return(Error(e))
-        )
-      );
-
-    result;
+                  ~body=Piaf.Response.body(response),
+                  ~headers=
+                    Piaf.Response.headers(response) |> Piaf.Headers.to_list,
+                  ~url,
+                ),
+              ),
+            )
+          | Error(error) => Lwt.return(Error(error))
+          }
+      )
+    );
   };
 };
 
