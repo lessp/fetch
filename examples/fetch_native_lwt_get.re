@@ -11,7 +11,7 @@ Fetch.(
              url,
            );
          }
-       | Error(_) => Printf.printf("That's an error"),
+       | Error(error) => print_string(error),
      )
   |> Lwt_main.run
 );

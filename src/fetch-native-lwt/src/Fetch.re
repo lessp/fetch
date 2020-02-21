@@ -9,16 +9,24 @@ module IO = {
     };
 
     module Body = {
-      type t = Morph.Response.body;
+      type t = Piaf.Body.t;
 
       let toString = body => {
-        switch (body) {
-        | `String(body) => body
-        | _ => ""
-        };
-      };
+        let bodyAsString = ref("");
+        Lwt.Infix.(
+          Piaf.Body.to_string(body)
+          >|= (
+            bodyString => {
+              bodyAsString := bodyString;
 
-      let ofString = body => `String(body);
+              Lwt.return();
+            }
+          )
+          |> ignore
+        );
+        bodyAsString^;
+      };
+      let ofString = body => Piaf.Body.of_string(body);
     };
 
     type t = {
@@ -36,39 +44,42 @@ module IO = {
     };
   };
 
-  type t = Lwt.t(result(Response.t, exn));
+  type t = Lwt.t(result(Response.t, string));
 
   let make = ({headers, body, meth, url}: Fetch_Core.Request.t) => {
+    let body =
+      switch (body) {
+      | Some(body) => Piaf.Body.of_string(body)
+      | None => Piaf.Body.empty
+      };
+
     Lwt.Infix.(
-      Morph.Request.make(
-        ~meth,
+      Piaf.Client.Oneshot.request(
+        ~meth=Piaf.Method.of_string(Fetch_Core.Method.toString(meth)),
         ~headers=headers |> List.append([("User-Agent", "reason-fetch")]),
-        ~read_body=
-          () =>
-            Lwt.return(
-              body
-              |> (
-                fun
-                | None => ""
-                | Some(body) => body
-              ),
-            ),
-        url,
+        ~body,
+        url |> Uri.of_string,
       )
-      |> Morph_client.handle
       >>= (
-        ({Morph.Response.status, body, headers}) => {
-          Lwt.return(
-            Ok(
-              Response.make(
-                ~status=Response.Status.make(status |> Morph.Status.to_code),
-                ~body,
-                ~headers,
-                ~url,
+        res =>
+          switch (res) {
+          | Ok(response) =>
+            Lwt.return(
+              Ok(
+                Response.make(
+                  ~status=
+                    Response.Status.make(
+                      response |> Piaf.Response.status |> Piaf.Status.to_code,
+                    ),
+                  ~body=Piaf.Response.body(response),
+                  ~headers=
+                    Piaf.Response.headers(response) |> Piaf.Headers.to_list,
+                  ~url,
+                ),
               ),
-            ),
-          );
-        }
+            )
+          | Error(error) => Lwt.return(Error(error))
+          }
       )
     );
   };

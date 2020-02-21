@@ -5,7 +5,7 @@
   "license": "MIT",
   "esy": {
     "build": "dune build --profile=release --only-packages=fetch-native-lwt --root=.",
-    "buildDev": "refmterr dune build @all"
+    "buildDev": "refmterr dune build -p #{self.name} "
   },
   "scripts": {
     "format": "esy dune build @fmt --auto-promote"
@@ -14,10 +14,7 @@
     "@opam/dune": "*",
     "@opam/reason": "*",
     "fetch-core": "0.1.0-alpha.2",
-    "@reason-native-web/morph_client": "^0.1.1"
-  },
-  "peerDependencies": {
-    "ocaml": ">=4.6.0"
+    "@opam/piaf": "anmonteiro/piaf:piaf.opam#e99ae27f946017417528163383188ca641595df6"
   },
   "devDependencies": {
     "@opam/merlin": "^3.3.2",
@@ -27,8 +24,9 @@
     "refmterr": "*"
   },
   "resolutions": {
-    "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
-    "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
-    "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#76b461bed081c64908fb1fdfa076ab2c936ca622"
+    "@opam/ssl": "savonet/ocaml-ssl:ssl.opam#6b75fac",
+    "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#9308e34",
+    "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#9308e34",
+    "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#9308e34"
   }
 }

@@ -5,7 +5,7 @@
   "license": "MIT",
   "esy": {
     "build": "dune build --profile=release --only-packages=fetch-core --root .",
-    "buildDev": "refmterr dune build @all"
+    "buildDev": "refmterr dune build -p #{self.name}"
   },
   "scripts": {
     "format": "esy dune build @fmt --auto-promote"
@@ -13,9 +13,6 @@
   "dependencies": {
     "@opam/dune": "*",
     "@opam/reason": "*"
-  },
-  "peerDependencies": {
-    "ocaml": ">=4.6.0"
   },
   "devDependencies": {
     "@opam/merlin": "^3.3.2",

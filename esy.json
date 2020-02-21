@@ -23,9 +23,7 @@
     "fetch-native-lwt": "*",
     "fetch-core": "*",
     "@opam/dune": "*",
-    "@opam/opium_core": "rgrinberg/opium:opium_core.opam",
     "@opam/reason": "*",
-    "@reason-native-web/morph_client": "^0.1.1",
     "ocaml": "<4.9.0"
   },
   "devDependencies": {
@@ -41,8 +39,10 @@
   "resolutions": {
     "fetch-core": "link:./fetch-core.json",
     "fetch-native-lwt": "link:./fetch-native-lwt.json",
-    "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
-    "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
-    "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#76b461bed081c64908fb1fdfa076ab2c936ca622"
+    "@opam/piaf": "anmonteiro/piaf:piaf.opam#e99ae27f946017417528163383188ca641595df6",
+    "@opam/ssl": "savonet/ocaml-ssl:ssl.opam#6b75fac",
+    "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#9308e34",
+    "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#9308e34",
+    "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#9308e34"
   }
 }
