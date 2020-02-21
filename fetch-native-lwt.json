@@ -14,13 +14,15 @@
     "@opam/dune": "*",
     "@opam/reason": "*",
     "fetch-core": "0.1.0-alpha.2",
-    "@opam/piaf": "anmonteiro/piaf:piaf.opam#e99ae27f946017417528163383188ca641595df6"
+    "@opam/piaf": "anmonteiro/piaf:piaf.opam#e99ae27f946017417528163383188ca641595df6",
+    "yarn-pkg-config": "*"
   },
   "devDependencies": {
     "ocaml": "<4.9.0",
     "refmterr": "*"
   },
   "resolutions": {
+    "yarn-pkg-config": "esy-ocaml/yarn-pkg-config#34947ac97f898c8a94b1731df45aea16f8fc7b3c",
     "@opam/ssl": "savonet/ocaml-ssl:ssl.opam#6b75fac",
     "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#9308e34",
     "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#9308e34",
