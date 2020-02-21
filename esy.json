@@ -24,14 +24,14 @@
     "fetch-core": "*",
     "@opam/dune": "*",
     "@opam/reason": "*",
-    "ocaml": "~4.9.0"
+    "ocaml": "<4.9.0"
   },
   "devDependencies": {
     "@opam/merlin": "^3.3.2",
     "@opam/rtop": "3.5.2",
     "@opam/utop": "2.4.2",
     "@reason-native/console": "^0.1.0",
-    "@reason-native/rely": "*",
+    "@reason-native/rely": "3.1.0",
     "all-contributors-cli": "6.9.1",
     "refmterr": "*"
   },

@@ -15,9 +15,6 @@
     "@opam/reason": "*"
   },
   "devDependencies": {
-    "@opam/merlin": "^3.3.2",
-    "@opam/rtop": "*",
-    "@opam/utop": "*",
     "ocaml": "<4.9.0",
     "refmterr": "*"
   }
