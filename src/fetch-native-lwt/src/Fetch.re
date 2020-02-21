@@ -9,24 +9,12 @@ module IO = {
     };
 
     module Body = {
-      type t = Piaf.Body.t;
+      type t = string;
 
-      let toString = body => {
-        let bodyAsString = ref("");
-        Lwt.Infix.(
-          Piaf.Body.to_string(body)
-          >|= (
-            bodyString => {
-              bodyAsString := bodyString;
+      let make = body => body;
 
-              Lwt.return();
-            }
-          )
-          |> ignore
-        );
-        bodyAsString^;
-      };
-      let ofString = body => Piaf.Body.of_string(body);
+      let toString = body => body;
+      let ofString = body => body;
     };
 
     type t = {
@@ -55,6 +43,7 @@ module IO = {
 
     Lwt.Infix.(
       Piaf.Client.Oneshot.request(
+        ~config={...Piaf.Config.default, follow_redirects: true},
         ~meth=Piaf.Method.of_string(Fetch_Core.Method.toString(meth)),
         ~headers=headers |> List.append([("User-Agent", "reason-fetch")]),
         ~body,
@@ -64,19 +53,24 @@ module IO = {
         res =>
           switch (res) {
           | Ok(response) =>
-            Lwt.return(
-              Ok(
-                Response.make(
-                  ~status=
-                    Response.Status.make(
-                      response |> Piaf.Response.status |> Piaf.Status.to_code,
+            Piaf.Response.body(response)
+            |> Piaf.Body.to_string
+            >>= (
+              body =>
+                Lwt.return(
+                  Ok(
+                    Response.make(
+                      ~status=
+                        Response.Status.make(
+                          Piaf.Response.status(response)
+                          |> Piaf.Status.to_code,
+                        ),
+                      ~body=Response.Body.make(body),
+                      ~headers,
+                      ~url,
                     ),
-                  ~body=Piaf.Response.body(response),
-                  ~headers=
-                    Piaf.Response.headers(response) |> Piaf.Headers.to_list,
-                  ~url,
-                ),
-              ),
+                  ),
+                )
             )
           | Error(error) => Lwt.return(Error(error))
           }
