@@ -17,11 +17,6 @@ jobs:
         with:
           node-version: 10
       - uses: actions/checkout@v1
-      - name: Install pkg-config (Windows)
-        if: matrix.os == 'windows-latest'
-        run: |
-          choco install pkgconfiglite
-          pkg-config openssl
       - name: Install dependencies
         run: esy install
       - name: Build
