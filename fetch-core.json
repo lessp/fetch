@@ -15,7 +15,7 @@
     "@opam/reason": "*"
   },
   "devDependencies": {
-    "ocaml": "<4.9.0",
+    "ocaml": "~4.9.0",
     "refmterr": "*"
   }
 }
