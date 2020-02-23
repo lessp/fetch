@@ -1,5 +1,5 @@
 {
-  "checksum": "109543149475ad9b795c2529a172a5b3",
+  "checksum": "2156decdd176ddfa0e23f47c49a94c1b",
   "root": "fetch@link-dev:./esy.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#cca65f99674ed2d954d28788edeb8c57fada5ed0@d41d8cd9": {
@@ -479,14 +479,14 @@
       ],
       "devDependencies": []
     },
-    "regenerator-runtime@0.13.3@d41d8cd9": {
-      "id": "regenerator-runtime@0.13.3@d41d8cd9",
+    "regenerator-runtime@0.13.4@d41d8cd9": {
+      "id": "regenerator-runtime@0.13.4@d41d8cd9",
       "name": "regenerator-runtime",
-      "version": "0.13.3",
+      "version": "0.13.4",
       "source": {
         "type": "install",
         "source": [
-          "archive:https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.3.tgz#sha1:7cf6a77d8f5c6f60eb73c5fc1955b2ceb01e6bf5"
+          "archive:https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.4.tgz#sha1:e96bf612a3362d12bb69f7e8f74ffeab25c7ac91"
         ]
       },
       "overrides": [],
@@ -3717,7 +3717,7 @@
         ]
       },
       "overrides": [],
-      "dependencies": [ "regenerator-runtime@0.13.3@d41d8cd9" ],
+      "dependencies": [ "regenerator-runtime@0.13.4@d41d8cd9" ],
       "devDependencies": []
     }
   }
