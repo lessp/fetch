@@ -1,5 +1,5 @@
 {
-  "checksum": "792c7ed24b20b7f9708167517f481cf5",
+  "checksum": "109543149475ad9b795c2529a172a5b3",
   "root": "fetch@link-dev:./esy.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#cca65f99674ed2d954d28788edeb8c57fada5ed0@d41d8cd9": {
@@ -1135,9 +1135,8 @@
       "overrides": [],
       "dependencies": [
         "fetch-core@link:./fetch-core.json",
-        "@opam/reason@opam:3.5.2@f689c2cb",
-        "@opam/piaf@github:anmonteiro/piaf:piaf.opam#e99ae27f946017417528163383188ca641595df6@d41d8cd9",
-        "@opam/dune@opam:2.3.0@3dc35de7"
+        "@reason-native-web/piaf@1.0.0-alpha.1@d41d8cd9",
+        "@opam/reason@opam:3.5.2@f689c2cb", "@opam/dune@opam:2.3.0@3dc35de7"
       ],
       "devDependencies": []
     },
@@ -1170,7 +1169,7 @@
       ],
       "devDependencies": [
         "refmterr@3.3.0@d41d8cd9", "all-contributors-cli@6.9.1@d41d8cd9",
-        "@reason-native/rely@3.1.0@d41d8cd9",
+        "@reason-native/rely@3.2.1@d41d8cd9",
         "@reason-native/console@0.1.0@d41d8cd9",
         "@opam/utop@opam:2.4.2@4656e89b", "@opam/rtop@opam:3.5.2@7cdd768c",
         "@opam/merlin@opam:3.3.3@d653b06a"
@@ -1717,21 +1716,21 @@
       ],
       "devDependencies": []
     },
-    "@reason-native/rely@3.1.0@d41d8cd9": {
-      "id": "@reason-native/rely@3.1.0@d41d8cd9",
+    "@reason-native/rely@3.2.1@d41d8cd9": {
+      "id": "@reason-native/rely@3.2.1@d41d8cd9",
       "name": "@reason-native/rely",
-      "version": "3.1.0",
+      "version": "3.2.1",
       "source": {
         "type": "install",
         "source": [
-          "archive:https://registry.npmjs.org/@reason-native/rely/-/rely-3.1.0.tgz#sha1:4f59906dc7c18ba86c998e44d6463b6be866dfc6"
+          "archive:https://registry.npmjs.org/@reason-native/rely/-/rely-3.2.1.tgz#sha1:7945ac6a51773a97b8f8cfd97d2855ac7ac4ecb2"
         ]
       },
       "overrides": [],
       "dependencies": [
-        "refmterr@3.3.0@d41d8cd9", "ocaml@4.9.0@d41d8cd9",
-        "@reason-native/pastel@0.3.0@d41d8cd9",
+        "ocaml@4.9.0@d41d8cd9", "@reason-native/pastel@0.3.0@d41d8cd9",
         "@reason-native/file-context-printer@0.0.3@d41d8cd9",
+        "@reason-native/cli@0.0.1-alpha@d41d8cd9",
         "@opam/re@opam:1.9.0@d4d5e13d", "@opam/junit@opam:2.0.2@0b7bd730",
         "@opam/dune@opam:2.3.0@3dc35de7", "@esy-ocaml/reason@3.5.2@d41d8cd9"
       ],
@@ -1786,6 +1785,211 @@
       "dependencies": [
         "ocaml@4.9.0@d41d8cd9", "@opam/dune@opam:2.3.0@3dc35de7",
         "@esy-ocaml/reason@3.5.2@d41d8cd9"
+      ],
+      "devDependencies": []
+    },
+    "@reason-native/cli@0.0.1-alpha@d41d8cd9": {
+      "id": "@reason-native/cli@0.0.1-alpha@d41d8cd9",
+      "name": "@reason-native/cli",
+      "version": "0.0.1-alpha",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://registry.npmjs.org/@reason-native/cli/-/cli-0.0.1-alpha.tgz#sha1:0b911053fa7cc661eac10ead50d6ea6cc1fcd94d"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.9.0@d41d8cd9", "@reason-native/pastel@0.3.0@d41d8cd9",
+        "@opam/re@opam:1.9.0@d4d5e13d", "@opam/dune@opam:2.3.0@3dc35de7",
+        "@esy-ocaml/reason@3.5.2@d41d8cd9"
+      ],
+      "devDependencies": []
+    },
+    "@reason-native-web/ssl@0.5.9-dev.1@d41d8cd9": {
+      "id": "@reason-native-web/ssl@0.5.9-dev.1@d41d8cd9",
+      "name": "@reason-native-web/ssl",
+      "version": "0.5.9-dev.1",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://registry.npmjs.org/@reason-native-web/ssl/-/ssl-0.5.9-dev.1.tgz#sha1:75b90457f984d4f4c7ee19c2108a54b05dd00d94"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.9.0@d41d8cd9",
+        "@opam/dune-configurator@opam:2.3.0@cf20be6b",
+        "@opam/dune@opam:2.3.0@3dc35de7",
+        "@opam/conf-libssl@archive:https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.tar.gz#sha1:df0ee4811c87c209ebadb4e6b203d1e560d00f9a@0fabfe7a",
+        "@opam/base-unix@opam:base@87d0b2eb"
+      ],
+      "devDependencies": []
+    },
+    "@reason-native-web/piaf@1.0.0-alpha.1@d41d8cd9": {
+      "id": "@reason-native-web/piaf@1.0.0-alpha.1@d41d8cd9",
+      "name": "@reason-native-web/piaf",
+      "version": "1.0.0-alpha.1",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://registry.npmjs.org/@reason-native-web/piaf/-/piaf-1.0.0-alpha.1.tgz#sha1:1118e5b95f28da837eb072412c19570b0cdd05e0"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.9.0@d41d8cd9",
+        "@reason-native-web/ssl@0.5.9-dev.1@d41d8cd9",
+        "@reason-native-web/lwt_ssl@1.1.3-alpha.1@d41d8cd9",
+        "@reason-native-web/h2-lwt-unix@0.5.0-alpha.1@d41d8cd9",
+        "@reason-native-web/h1-lwt-unix@1.0.0-alpha.1@d41d8cd9",
+        "@opam/uri@opam:3.1.0@d38ac0ae",
+        "@opam/ocaml-syntax-shims@opam:1.0.0@a9aa3bfa",
+        "@opam/magic-mime@opam:1.1.2@980f82fb",
+        "@opam/lwt@opam:5.1.1@6f0a0b20", "@opam/logs@opam:0.7.0@1d03143e",
+        "@opam/dune@opam:2.3.0@3dc35de7",
+        "@opam/conf-libssl@archive:https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.tar.gz#sha1:df0ee4811c87c209ebadb4e6b203d1e560d00f9a@0fabfe7a",
+        "@opam/bigstringaf@opam:0.6.1@35f5e6d1"
+      ],
+      "devDependencies": []
+    },
+    "@reason-native-web/lwt_ssl@1.1.3-alpha.1@d41d8cd9": {
+      "id": "@reason-native-web/lwt_ssl@1.1.3-alpha.1@d41d8cd9",
+      "name": "@reason-native-web/lwt_ssl",
+      "version": "1.1.3-alpha.1",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://registry.npmjs.org/@reason-native-web/lwt_ssl/-/lwt_ssl-1.1.3-alpha.1.tgz#sha1:79c85132816abb82de626b9867c38ae0ac02d52e"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.9.0@d41d8cd9",
+        "@reason-native-web/ssl@0.5.9-dev.1@d41d8cd9",
+        "@opam/lwt@opam:5.1.1@6f0a0b20", "@opam/dune@opam:2.3.0@3dc35de7",
+        "@opam/base-unix@opam:base@87d0b2eb"
+      ],
+      "devDependencies": []
+    },
+    "@reason-native-web/h2-lwt-unix@0.5.0-alpha.1@d41d8cd9": {
+      "id": "@reason-native-web/h2-lwt-unix@0.5.0-alpha.1@d41d8cd9",
+      "name": "@reason-native-web/h2-lwt-unix",
+      "version": "0.5.0-alpha.1",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://registry.npmjs.org/@reason-native-web/h2-lwt-unix/-/h2-lwt-unix-0.5.0-alpha.1.tgz#sha1:ed914595f0c9e7043d4779794fa71ded69286a7e"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.9.0@d41d8cd9",
+        "@reason-native-web/lwt_ssl@1.1.3-alpha.1@d41d8cd9",
+        "@reason-native-web/h2-lwt@0.5.0-alpha.1@d41d8cd9",
+        "@opam/lwt@opam:5.1.1@6f0a0b20",
+        "@opam/faraday-lwt-unix@opam:0.7.0@52a60108",
+        "@opam/dune@opam:2.3.0@3dc35de7"
+      ],
+      "devDependencies": []
+    },
+    "@reason-native-web/h2-lwt@0.5.0-alpha.1@d41d8cd9": {
+      "id": "@reason-native-web/h2-lwt@0.5.0-alpha.1@d41d8cd9",
+      "name": "@reason-native-web/h2-lwt",
+      "version": "0.5.0-alpha.1",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://registry.npmjs.org/@reason-native-web/h2-lwt/-/h2-lwt-0.5.0-alpha.1.tgz#sha1:8a8dd08bd21f61e3e1f421c219287c1e84a5c716"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.9.0@d41d8cd9",
+        "@reason-native-web/h2@0.5.0-alpha.1@d41d8cd9",
+        "@opam/lwt@opam:5.1.1@6f0a0b20", "@opam/dune@opam:2.3.0@3dc35de7"
+      ],
+      "devDependencies": []
+    },
+    "@reason-native-web/h2@0.5.0-alpha.1@d41d8cd9": {
+      "id": "@reason-native-web/h2@0.5.0-alpha.1@d41d8cd9",
+      "name": "@reason-native-web/h2",
+      "version": "0.5.0-alpha.1",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://registry.npmjs.org/@reason-native-web/h2/-/h2-0.5.0-alpha.1.tgz#sha1:d9892ac2459e22e67d8979ae33233025317e5772"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.9.0@d41d8cd9",
+        "@reason-native-web/h1@1.0.0-alpha.1@d41d8cd9",
+        "@opam/psq@opam:0.2.0@247756d4", "@opam/hpack@opam:0.2.0@9f3eae78",
+        "@opam/faraday@opam:0.7.0@6d4772f6",
+        "@opam/dune@opam:2.3.0@3dc35de7",
+        "@opam/bigstringaf@opam:0.6.1@35f5e6d1",
+        "@opam/base64@opam:3.3.0@d900b2d8",
+        "@opam/angstrom@opam:0.12.1@02015bad"
+      ],
+      "devDependencies": []
+    },
+    "@reason-native-web/h1-lwt-unix@1.0.0-alpha.1@d41d8cd9": {
+      "id": "@reason-native-web/h1-lwt-unix@1.0.0-alpha.1@d41d8cd9",
+      "name": "@reason-native-web/h1-lwt-unix",
+      "version": "1.0.0-alpha.1",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://registry.npmjs.org/@reason-native-web/h1-lwt-unix/-/h1-lwt-unix-1.0.0-alpha.1.tgz#sha1:d8f621929c1234c72e11bdb375f2c1218a1d5051"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.9.0@d41d8cd9",
+        "@reason-native-web/lwt_ssl@1.1.3-alpha.1@d41d8cd9",
+        "@reason-native-web/h1-lwt@1.0.0-alpha.1@d41d8cd9",
+        "@opam/lwt@opam:5.1.1@6f0a0b20",
+        "@opam/faraday-lwt-unix@opam:0.7.0@52a60108",
+        "@opam/dune@opam:2.3.0@3dc35de7"
+      ],
+      "devDependencies": []
+    },
+    "@reason-native-web/h1-lwt@1.0.0-alpha.1@d41d8cd9": {
+      "id": "@reason-native-web/h1-lwt@1.0.0-alpha.1@d41d8cd9",
+      "name": "@reason-native-web/h1-lwt",
+      "version": "1.0.0-alpha.1",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://registry.npmjs.org/@reason-native-web/h1-lwt/-/h1-lwt-1.0.0-alpha.1.tgz#sha1:28004e2b663648dc38f4e99f116d94790b56a34d"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.9.0@d41d8cd9",
+        "@reason-native-web/h1@1.0.0-alpha.1@d41d8cd9",
+        "@opam/lwt@opam:5.1.1@6f0a0b20", "@opam/dune@opam:2.3.0@3dc35de7"
+      ],
+      "devDependencies": []
+    },
+    "@reason-native-web/h1@1.0.0-alpha.1@d41d8cd9": {
+      "id": "@reason-native-web/h1@1.0.0-alpha.1@d41d8cd9",
+      "name": "@reason-native-web/h1",
+      "version": "1.0.0-alpha.1",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://registry.npmjs.org/@reason-native-web/h1/-/h1-1.0.0-alpha.1.tgz#sha1:2cef2f459923a092c532bcd36df49a78c92a0dd0"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.9.0@d41d8cd9", "@opam/result@opam:1.4@dc720aef",
+        "@opam/faraday@opam:0.7.0@6d4772f6",
+        "@opam/dune@opam:2.3.0@3dc35de7",
+        "@opam/bigstringaf@opam:0.6.1@35f5e6d1",
+        "@opam/angstrom@opam:0.12.1@02015bad"
       ],
       "devDependencies": []
     },
@@ -2050,31 +2254,6 @@
         "@opam/base-bytes@opam:base@19d0c2ff"
       ]
     },
-    "@opam/ssl@github:savonet/ocaml-ssl:ssl.opam#6b75fac@d41d8cd9": {
-      "id": "@opam/ssl@github:savonet/ocaml-ssl:ssl.opam#6b75fac@d41d8cd9",
-      "name": "@opam/ssl",
-      "version": "github:savonet/ocaml-ssl:ssl.opam#6b75fac",
-      "source": {
-        "type": "install",
-        "source": [ "github:savonet/ocaml-ssl:ssl.opam#6b75fac" ]
-      },
-      "overrides": [],
-      "dependencies": [
-        "ocaml@4.9.0@d41d8cd9",
-        "@opam/dune-configurator@opam:2.3.0@cf20be6b",
-        "@opam/dune@opam:2.3.0@3dc35de7",
-        "@opam/conf-libssl@archive:https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.tar.gz#sha1:df0ee4811c87c209ebadb4e6b203d1e560d00f9a@0fabfe7a",
-        "@opam/base-unix@opam:base@87d0b2eb",
-        "@esy-ocaml/substs@0.0.1@d41d8cd9"
-      ],
-      "devDependencies": [
-        "ocaml@4.9.0@d41d8cd9",
-        "@opam/dune-configurator@opam:2.3.0@cf20be6b",
-        "@opam/dune@opam:2.3.0@3dc35de7",
-        "@opam/conf-libssl@archive:https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.tar.gz#sha1:df0ee4811c87c209ebadb4e6b203d1e560d00f9a@0fabfe7a",
-        "@opam/base-unix@opam:base@87d0b2eb"
-      ]
-    },
     "@opam/seq@opam:base@d8d7de1d": {
       "id": "@opam/seq@opam:base@d8d7de1d",
       "name": "@opam/seq",
@@ -2307,47 +2486,6 @@
       ],
       "devDependencies": [
         "ocaml@4.9.0@d41d8cd9", "@opam/dune@opam:2.3.0@3dc35de7"
-      ]
-    },
-    "@opam/piaf@github:anmonteiro/piaf:piaf.opam#e99ae27f946017417528163383188ca641595df6@d41d8cd9": {
-      "id":
-        "@opam/piaf@github:anmonteiro/piaf:piaf.opam#e99ae27f946017417528163383188ca641595df6@d41d8cd9",
-      "name": "@opam/piaf",
-      "version":
-        "github:anmonteiro/piaf:piaf.opam#e99ae27f946017417528163383188ca641595df6",
-      "source": {
-        "type": "install",
-        "source": [
-          "github:anmonteiro/piaf:piaf.opam#e99ae27f946017417528163383188ca641595df6"
-        ]
-      },
-      "overrides": [],
-      "dependencies": [
-        "ocaml@4.9.0@d41d8cd9", "@opam/uri@opam:3.1.0@d38ac0ae",
-        "@opam/ssl@github:savonet/ocaml-ssl:ssl.opam#6b75fac@d41d8cd9",
-        "@opam/ocaml-syntax-shims@opam:1.0.0@a9aa3bfa",
-        "@opam/lwt_ssl@opam:1.1.3@9d044ebe", "@opam/lwt@opam:5.1.1@6f0a0b20",
-        "@opam/logs@opam:0.7.0@1d03143e",
-        "@opam/httpaf-lwt-unix@github:anmonteiro/httpaf:httpaf-lwt-unix.opam#9308e34@d41d8cd9",
-        "@opam/httpaf@github:anmonteiro/httpaf:httpaf.opam#9308e34@d41d8cd9",
-        "@opam/h2-lwt-unix@opam:0.5.0@afe9e192",
-        "@opam/h2@opam:0.5.0@426493c1", "@opam/dune@opam:2.3.0@3dc35de7",
-        "@opam/conf-libssl@archive:https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.tar.gz#sha1:df0ee4811c87c209ebadb4e6b203d1e560d00f9a@0fabfe7a",
-        "@opam/bigstringaf@opam:0.6.1@35f5e6d1",
-        "@esy-ocaml/substs@0.0.1@d41d8cd9"
-      ],
-      "devDependencies": [
-        "ocaml@4.9.0@d41d8cd9", "@opam/uri@opam:3.1.0@d38ac0ae",
-        "@opam/ssl@github:savonet/ocaml-ssl:ssl.opam#6b75fac@d41d8cd9",
-        "@opam/ocaml-syntax-shims@opam:1.0.0@a9aa3bfa",
-        "@opam/lwt_ssl@opam:1.1.3@9d044ebe", "@opam/lwt@opam:5.1.1@6f0a0b20",
-        "@opam/logs@opam:0.7.0@1d03143e",
-        "@opam/httpaf-lwt-unix@github:anmonteiro/httpaf:httpaf-lwt-unix.opam#9308e34@d41d8cd9",
-        "@opam/httpaf@github:anmonteiro/httpaf:httpaf.opam#9308e34@d41d8cd9",
-        "@opam/h2-lwt-unix@opam:0.5.0@afe9e192",
-        "@opam/h2@opam:0.5.0@426493c1", "@opam/dune@opam:2.3.0@3dc35de7",
-        "@opam/conf-libssl@archive:https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.tar.gz#sha1:df0ee4811c87c209ebadb4e6b203d1e560d00f9a@0fabfe7a",
-        "@opam/bigstringaf@opam:0.6.1@35f5e6d1"
       ]
     },
     "@opam/ocplib-endian@opam:1.0@aa720242": {
@@ -2650,35 +2788,29 @@
         "@opam/dune@opam:2.3.0@3dc35de7"
       ]
     },
-    "@opam/lwt_ssl@opam:1.1.3@9d044ebe": {
-      "id": "@opam/lwt_ssl@opam:1.1.3@9d044ebe",
-      "name": "@opam/lwt_ssl",
-      "version": "opam:1.1.3",
+    "@opam/magic-mime@opam:1.1.2@980f82fb": {
+      "id": "@opam/magic-mime@opam:1.1.2@980f82fb",
+      "name": "@opam/magic-mime",
+      "version": "opam:1.1.2",
       "source": {
         "type": "install",
         "source": [
-          "archive:https://opam.ocaml.org/cache/md5/b1/b18414b2ef71ededa07666dfc467f10a#md5:b18414b2ef71ededa07666dfc467f10a",
-          "archive:https://github.com/ocsigen/lwt_ssl/archive/1.1.3.tar.gz#md5:b18414b2ef71ededa07666dfc467f10a"
+          "archive:https://opam.ocaml.org/cache/sha256/0c/0c590bbc747531b56d392ee8f063d879df1e2026ba2dfa2d1bc98c9a9acb04eb#sha256:0c590bbc747531b56d392ee8f063d879df1e2026ba2dfa2d1bc98c9a9acb04eb",
+          "archive:https://github.com/mirage/ocaml-magic-mime/releases/download/v1.1.2/magic-mime-v1.1.2.tbz#sha256:0c590bbc747531b56d392ee8f063d879df1e2026ba2dfa2d1bc98c9a9acb04eb"
         ],
         "opam": {
-          "name": "lwt_ssl",
-          "version": "1.1.3",
-          "path": "esy.lock/opam/lwt_ssl.1.1.3"
+          "name": "magic-mime",
+          "version": "1.1.2",
+          "path": "esy.lock/opam/magic-mime.1.1.2"
         }
       },
       "overrides": [],
       "dependencies": [
-        "ocaml@4.9.0@d41d8cd9",
-        "@opam/ssl@github:savonet/ocaml-ssl:ssl.opam#6b75fac@d41d8cd9",
-        "@opam/lwt@opam:5.1.1@6f0a0b20", "@opam/dune@opam:2.3.0@3dc35de7",
-        "@opam/base-unix@opam:base@87d0b2eb",
+        "ocaml@4.9.0@d41d8cd9", "@opam/dune@opam:2.3.0@3dc35de7",
         "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
       "devDependencies": [
-        "ocaml@4.9.0@d41d8cd9",
-        "@opam/ssl@github:savonet/ocaml-ssl:ssl.opam#6b75fac@d41d8cd9",
-        "@opam/lwt@opam:5.1.1@6f0a0b20", "@opam/dune@opam:2.3.0@3dc35de7",
-        "@opam/base-unix@opam:base@87d0b2eb"
+        "ocaml@4.9.0@d41d8cd9", "@opam/dune@opam:2.3.0@3dc35de7"
       ]
     },
     "@opam/lwt_react@opam:1.1.3@72987fcf": {
@@ -2880,79 +3012,6 @@
       ],
       "devDependencies": [ "ocaml@4.9.0@d41d8cd9" ]
     },
-    "@opam/httpaf-lwt-unix@github:anmonteiro/httpaf:httpaf-lwt-unix.opam#9308e34@d41d8cd9": {
-      "id":
-        "@opam/httpaf-lwt-unix@github:anmonteiro/httpaf:httpaf-lwt-unix.opam#9308e34@d41d8cd9",
-      "name": "@opam/httpaf-lwt-unix",
-      "version": "github:anmonteiro/httpaf:httpaf-lwt-unix.opam#9308e34",
-      "source": {
-        "type": "install",
-        "source": [ "github:anmonteiro/httpaf:httpaf-lwt-unix.opam#9308e34" ]
-      },
-      "overrides": [],
-      "dependencies": [
-        "ocaml@4.9.0@d41d8cd9", "@opam/lwt_ssl@opam:1.1.3@9d044ebe",
-        "@opam/lwt@opam:5.1.1@6f0a0b20",
-        "@opam/httpaf-lwt@github:anmonteiro/httpaf:httpaf-lwt.opam#9308e34@d41d8cd9",
-        "@opam/httpaf@github:anmonteiro/httpaf:httpaf.opam#9308e34@d41d8cd9",
-        "@opam/faraday-lwt-unix@opam:0.7.0@52a60108",
-        "@opam/dune@opam:2.3.0@3dc35de7", "@esy-ocaml/substs@0.0.1@d41d8cd9"
-      ],
-      "devDependencies": [
-        "ocaml@4.9.0@d41d8cd9", "@opam/lwt@opam:5.1.1@6f0a0b20",
-        "@opam/httpaf-lwt@github:anmonteiro/httpaf:httpaf-lwt.opam#9308e34@d41d8cd9",
-        "@opam/httpaf@github:anmonteiro/httpaf:httpaf.opam#9308e34@d41d8cd9",
-        "@opam/faraday-lwt-unix@opam:0.7.0@52a60108",
-        "@opam/dune@opam:2.3.0@3dc35de7"
-      ]
-    },
-    "@opam/httpaf-lwt@github:anmonteiro/httpaf:httpaf-lwt.opam#9308e34@d41d8cd9": {
-      "id":
-        "@opam/httpaf-lwt@github:anmonteiro/httpaf:httpaf-lwt.opam#9308e34@d41d8cd9",
-      "name": "@opam/httpaf-lwt",
-      "version": "github:anmonteiro/httpaf:httpaf-lwt.opam#9308e34",
-      "source": {
-        "type": "install",
-        "source": [ "github:anmonteiro/httpaf:httpaf-lwt.opam#9308e34" ]
-      },
-      "overrides": [],
-      "dependencies": [
-        "ocaml@4.9.0@d41d8cd9", "@opam/lwt@opam:5.1.1@6f0a0b20",
-        "@opam/httpaf@github:anmonteiro/httpaf:httpaf.opam#9308e34@d41d8cd9",
-        "@opam/dune@opam:2.3.0@3dc35de7", "@esy-ocaml/substs@0.0.1@d41d8cd9"
-      ],
-      "devDependencies": [
-        "ocaml@4.9.0@d41d8cd9", "@opam/lwt@opam:5.1.1@6f0a0b20",
-        "@opam/httpaf@github:anmonteiro/httpaf:httpaf.opam#9308e34@d41d8cd9",
-        "@opam/dune@opam:2.3.0@3dc35de7"
-      ]
-    },
-    "@opam/httpaf@github:anmonteiro/httpaf:httpaf.opam#9308e34@d41d8cd9": {
-      "id":
-        "@opam/httpaf@github:anmonteiro/httpaf:httpaf.opam#9308e34@d41d8cd9",
-      "name": "@opam/httpaf",
-      "version": "github:anmonteiro/httpaf:httpaf.opam#9308e34",
-      "source": {
-        "type": "install",
-        "source": [ "github:anmonteiro/httpaf:httpaf.opam#9308e34" ]
-      },
-      "overrides": [],
-      "dependencies": [
-        "ocaml@4.9.0@d41d8cd9", "@opam/result@opam:1.4@dc720aef",
-        "@opam/faraday@opam:0.7.0@6d4772f6",
-        "@opam/dune@opam:2.3.0@3dc35de7",
-        "@opam/bigstringaf@opam:0.6.1@35f5e6d1",
-        "@opam/angstrom@opam:0.12.1@02015bad",
-        "@esy-ocaml/substs@0.0.1@d41d8cd9"
-      ],
-      "devDependencies": [
-        "ocaml@4.9.0@d41d8cd9", "@opam/result@opam:1.4@dc720aef",
-        "@opam/faraday@opam:0.7.0@6d4772f6",
-        "@opam/dune@opam:2.3.0@3dc35de7",
-        "@opam/bigstringaf@opam:0.6.1@35f5e6d1",
-        "@opam/angstrom@opam:0.12.1@02015bad"
-      ]
-    },
     "@opam/hpack@opam:0.2.0@9f3eae78": {
       "id": "@opam/hpack@opam:0.2.0@9f3eae78",
       "name": "@opam/hpack",
@@ -2979,102 +3038,6 @@
       "devDependencies": [
         "ocaml@4.9.0@d41d8cd9", "@opam/faraday@opam:0.7.0@6d4772f6",
         "@opam/dune@opam:2.3.0@3dc35de7",
-        "@opam/angstrom@opam:0.12.1@02015bad"
-      ]
-    },
-    "@opam/h2-lwt-unix@opam:0.5.0@afe9e192": {
-      "id": "@opam/h2-lwt-unix@opam:0.5.0@afe9e192",
-      "name": "@opam/h2-lwt-unix",
-      "version": "opam:0.5.0",
-      "source": {
-        "type": "install",
-        "source": [
-          "archive:https://opam.ocaml.org/cache/sha256/cc/cc7517d73b0b24425afcedd258c09d7ebb6c2c20075137cb6f6eb7b63c8e7ad3#sha256:cc7517d73b0b24425afcedd258c09d7ebb6c2c20075137cb6f6eb7b63c8e7ad3",
-          "archive:https://github.com/anmonteiro/ocaml-h2/releases/download/0.5.0/h2-0.5.0.tbz#sha256:cc7517d73b0b24425afcedd258c09d7ebb6c2c20075137cb6f6eb7b63c8e7ad3"
-        ],
-        "opam": {
-          "name": "h2-lwt-unix",
-          "version": "0.5.0",
-          "path": "esy.lock/opam/h2-lwt-unix.0.5.0"
-        }
-      },
-      "overrides": [],
-      "dependencies": [
-        "ocaml@4.9.0@d41d8cd9", "@opam/lwt_ssl@opam:1.1.3@9d044ebe",
-        "@opam/lwt@opam:5.1.1@6f0a0b20", "@opam/h2-lwt@opam:0.5.0@8265f868",
-        "@opam/faraday-lwt-unix@opam:0.7.0@52a60108",
-        "@opam/dune@opam:2.3.0@3dc35de7", "@esy-ocaml/substs@0.0.1@d41d8cd9"
-      ],
-      "devDependencies": [
-        "ocaml@4.9.0@d41d8cd9", "@opam/lwt@opam:5.1.1@6f0a0b20",
-        "@opam/h2-lwt@opam:0.5.0@8265f868",
-        "@opam/faraday-lwt-unix@opam:0.7.0@52a60108",
-        "@opam/dune@opam:2.3.0@3dc35de7"
-      ]
-    },
-    "@opam/h2-lwt@opam:0.5.0@8265f868": {
-      "id": "@opam/h2-lwt@opam:0.5.0@8265f868",
-      "name": "@opam/h2-lwt",
-      "version": "opam:0.5.0",
-      "source": {
-        "type": "install",
-        "source": [
-          "archive:https://opam.ocaml.org/cache/sha256/cc/cc7517d73b0b24425afcedd258c09d7ebb6c2c20075137cb6f6eb7b63c8e7ad3#sha256:cc7517d73b0b24425afcedd258c09d7ebb6c2c20075137cb6f6eb7b63c8e7ad3",
-          "archive:https://github.com/anmonteiro/ocaml-h2/releases/download/0.5.0/h2-0.5.0.tbz#sha256:cc7517d73b0b24425afcedd258c09d7ebb6c2c20075137cb6f6eb7b63c8e7ad3"
-        ],
-        "opam": {
-          "name": "h2-lwt",
-          "version": "0.5.0",
-          "path": "esy.lock/opam/h2-lwt.0.5.0"
-        }
-      },
-      "overrides": [],
-      "dependencies": [
-        "ocaml@4.9.0@d41d8cd9", "@opam/lwt@opam:5.1.1@6f0a0b20",
-        "@opam/h2@opam:0.5.0@426493c1", "@opam/dune@opam:2.3.0@3dc35de7",
-        "@esy-ocaml/substs@0.0.1@d41d8cd9"
-      ],
-      "devDependencies": [
-        "ocaml@4.9.0@d41d8cd9", "@opam/lwt@opam:5.1.1@6f0a0b20",
-        "@opam/h2@opam:0.5.0@426493c1", "@opam/dune@opam:2.3.0@3dc35de7"
-      ]
-    },
-    "@opam/h2@opam:0.5.0@426493c1": {
-      "id": "@opam/h2@opam:0.5.0@426493c1",
-      "name": "@opam/h2",
-      "version": "opam:0.5.0",
-      "source": {
-        "type": "install",
-        "source": [
-          "archive:https://opam.ocaml.org/cache/sha256/cc/cc7517d73b0b24425afcedd258c09d7ebb6c2c20075137cb6f6eb7b63c8e7ad3#sha256:cc7517d73b0b24425afcedd258c09d7ebb6c2c20075137cb6f6eb7b63c8e7ad3",
-          "archive:https://github.com/anmonteiro/ocaml-h2/releases/download/0.5.0/h2-0.5.0.tbz#sha256:cc7517d73b0b24425afcedd258c09d7ebb6c2c20075137cb6f6eb7b63c8e7ad3"
-        ],
-        "opam": {
-          "name": "h2",
-          "version": "0.5.0",
-          "path": "esy.lock/opam/h2.0.5.0"
-        }
-      },
-      "overrides": [],
-      "dependencies": [
-        "ocaml@4.9.0@d41d8cd9", "@opam/psq@opam:0.2.0@247756d4",
-        "@opam/httpaf@github:anmonteiro/httpaf:httpaf.opam#9308e34@d41d8cd9",
-        "@opam/hpack@opam:0.2.0@9f3eae78",
-        "@opam/faraday@opam:0.7.0@6d4772f6",
-        "@opam/dune@opam:2.3.0@3dc35de7",
-        "@opam/bigstringaf@opam:0.6.1@35f5e6d1",
-        "@opam/base64@opam:3.3.0@d900b2d8",
-        "@opam/angstrom@opam:0.12.1@02015bad",
-        "@esy-ocaml/substs@0.0.1@d41d8cd9"
-      ],
-      "devDependencies": [
-        "ocaml@4.9.0@d41d8cd9", "@opam/psq@opam:0.2.0@247756d4",
-        "@opam/httpaf@github:anmonteiro/httpaf:httpaf.opam#9308e34@d41d8cd9",
-        "@opam/hpack@opam:0.2.0@9f3eae78",
-        "@opam/faraday@opam:0.7.0@6d4772f6",
-        "@opam/dune@opam:2.3.0@3dc35de7",
-        "@opam/bigstringaf@opam:0.6.1@35f5e6d1",
-        "@opam/base64@opam:3.3.0@d900b2d8",
         "@opam/angstrom@opam:0.12.1@02015bad"
       ]
     },

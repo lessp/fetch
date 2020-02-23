@@ -4,7 +4,7 @@
   "description": "A fetch interface/functor for ReasonML/OCaml",
   "license": "MIT",
   "esy": {
-    "build": "dune build --profile=release --only-packages=fetch-core --root .",
+    "build": "dune build -p #{self.name}",
     "buildDev": "refmterr dune build -p #{self.name}"
   },
   "scripts": {
