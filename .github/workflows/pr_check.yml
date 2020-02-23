@@ -10,22 +10,22 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macOS-latest]
-        # os: [ubuntu-latest, macOS-latest, windows-latest]
+        os: [ubuntu-latest, macOS-latest, windows-latest]
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: 10
+          node-version: 12.16.1
       - uses: actions/checkout@v1
       - name: Install esy
-        run: npm install -g esy@0.5.8
-      - name: Install dependencies
-        run: esy install
-      - name: Build
-        run: esy build
+        run: npm install -g @esy-nightly/esy
+      - name: Build packages
+        run: |
+          esy @fetch-core
+          esy @fetch-native-lwt
+          esy
       - name: Check code formatting
         run: esy dune build @fmt --root .
       - name: Run tests
-        run: esy test 
+        run: esy test
       - name: Run example
         run: esy example

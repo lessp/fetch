@@ -4,8 +4,8 @@
   "description": "Fetch client (Lwt) for native ReasonML/OCaml",
   "license": "MIT",
   "esy": {
-    "build": "dune build --profile=release --only-packages=fetch-native-lwt --root=.",
-    "buildDev": "refmterr dune build @all"
+    "build": "dune build -p #{self.name}",
+    "buildDev": "refmterr dune build -p #{self.name}"
   },
   "scripts": {
     "format": "esy dune build @fmt --auto-promote"
@@ -13,22 +13,15 @@
   "dependencies": {
     "@opam/dune": "*",
     "@opam/reason": "*",
-    "fetch-core": "0.1.0-alpha.2",
-    "@reason-native-web/morph_client": "^0.1.1"
-  },
-  "peerDependencies": {
-    "ocaml": ">=4.6.0"
+    "fetch-core": "0.1.0-alpha.4",
+    "@reason-native-web/piaf": "1.0.0-alpha.1"
   },
   "devDependencies": {
-    "@opam/merlin": "^3.3.2",
-    "@opam/rtop": "*",
-    "@opam/utop": "*",
-    "ocaml": "<4.9.0",
+    "ocaml": "~4.9.0",
     "refmterr": "*"
   },
   "resolutions": {
-    "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
-    "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#76b461bed081c64908fb1fdfa076ab2c936ca622",
-    "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#76b461bed081c64908fb1fdfa076ab2c936ca622"
+    "pkg-config": "lessp/pkg-config#16264492e05232f01acd4fabe7a2fe70c7ea5ad8",
+    "@opam/conf-libssl": "esy-packages/esy-openssl#648930fa614886bc189f9b5c31f64f0b663fceee"
   }
 }

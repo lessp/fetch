@@ -1,11 +1,11 @@
 {
   "name": "fetch-core",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.4",
   "description": "A fetch interface/functor for ReasonML/OCaml",
   "license": "MIT",
   "esy": {
-    "build": "dune build --profile=release --only-packages=fetch-core --root .",
-    "buildDev": "refmterr dune build @all"
+    "build": "dune build -p #{self.name}",
+    "buildDev": "refmterr dune build -p #{self.name}"
   },
   "scripts": {
     "format": "esy dune build @fmt --auto-promote"
@@ -14,14 +14,8 @@
     "@opam/dune": "*",
     "@opam/reason": "*"
   },
-  "peerDependencies": {
-    "ocaml": ">=4.6.0"
-  },
   "devDependencies": {
-    "@opam/merlin": "^3.3.2",
-    "@opam/rtop": "*",
-    "@opam/utop": "*",
-    "ocaml": "<4.9.0",
+    "ocaml": "~4.9.0",
     "refmterr": "*"
   }
 }
