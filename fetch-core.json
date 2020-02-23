@@ -1,6 +1,6 @@
 {
   "name": "fetch-core",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.4",
   "description": "A fetch interface/functor for ReasonML/OCaml",
   "license": "MIT",
   "esy": {

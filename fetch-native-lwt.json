@@ -22,6 +22,7 @@
   },
   "resolutions": {
     "fetch-core": "link:./fetch-core.json",
+    "pkg-config": "lessp/pkg-config#16264492e05232f01acd4fabe7a2fe70c7ea5ad8",
     "@opam/conf-libssl": "esy-packages/esy-openssl#648930fa614886bc189f9b5c31f64f0b663fceee",
     "@opam/ssl": "savonet/ocaml-ssl:ssl.opam#6b75fac",
     "@opam/httpaf-lwt-unix": "anmonteiro/httpaf:httpaf-lwt-unix.opam#9308e34",
