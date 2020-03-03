@@ -4,15 +4,6 @@
   "description": "Fetch client (Lwt) for native ReasonML/OCaml",
   "license": "MIT",
   "esy": {
-    "buildEnv": {
-      "PKG_CONFIG_PATH": "/usr/lib64/pkgconfig:$PKG_CONFIG_PATH"
-    },
-    "exportedEnv": {
-      "PKG_CONFIG_PATH": {
-        "val": "/usr/lib64/pkgconfig:$PKG_CONFIG_PATH",
-        "scope": "global"
-      }
-    },
     "build": "dune build -p #{self.name}",
     "buildDev": "refmterr dune build -p #{self.name}"
   },
@@ -34,3 +25,4 @@
     "@opam/conf-libssl": "esy-packages/esy-openssl#648930fa614886bc189f9b5c31f64f0b663fceee"
   }
 }
+
