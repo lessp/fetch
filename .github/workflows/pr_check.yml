@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         if: matrix.os == windows-latest
-          run: choco install openssl 
+        run: choco install openssl 
         with:
           node-version: 12.16.1
       - uses: actions/checkout@v1
