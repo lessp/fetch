@@ -16,7 +16,9 @@ jobs:
         with:
           node-version: 12.16.1
       - if: matrix.os == 'windows-latest'
-        run: choco install openssl
+        run: |
+          choco install openssl
+          set OpenSSLDir=C:\OpenSSL-Win32\include
       - uses: actions/checkout@v1
       - name: Install esy
         run: npm install -g @esy-nightly/esy
