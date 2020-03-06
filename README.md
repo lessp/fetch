@@ -15,6 +15,10 @@ Provides a functor for creating and providing your own Fetch-implementation. The
 
 ## [Fetch Native Lwt](./src/fetch-native-lwt)
 
+![Windows](https://github.com/lessp/fetch/workflows/Windows/badge.svg)
+![macOS](https://github.com/lessp/fetch/workflows/macOS/badge.svg)
+![Ubuntu](https://github.com/lessp/fetch/workflows/Ubuntu/badge.svg)
+
 A consumable fetch-library for ReasonML/OCaml native. Uses `Lwt` for its `Promise`-implementation.
 
 ## Contributing
