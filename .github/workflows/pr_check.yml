@@ -10,7 +10,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macOS-latest, windows-2016]
+        os: [ubuntu-latest, macOS-latest, windows-2016, windows-latest]
     steps:
       - uses: actions/setup-node@v1
         with:
@@ -22,8 +22,8 @@ jobs:
         run: |
           esy '@fetch-core'
           esy '@fetch-native-lwt'
-          esy install
-          esy build
+      - name: Run esy 
+        run: esy 
       - name: Check code formatting
         run: esy dune build @fmt --root .
       - name: Run tests
