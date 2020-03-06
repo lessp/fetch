@@ -19,8 +19,5 @@
   "devDependencies": {
     "ocaml": "~4.9.0",
     "refmterr": "*"
-  },
-  "resolutions": {
-    "pkg-config": "lessp/pkg-config#16264492e05232f01acd4fabe7a2fe70c7ea5ad8"
   }
 }
