@@ -10,7 +10,7 @@ Currently to install, you'll need `esy` and pin `fetch-native-lwt` to point to t
 
 ```json
 "dependencies": {
-  "fetch-native-lwt": "github:lessp/reason-fetch:fetch-native-lwt.json#<commit-hash>"
+  "fetch-native-lwt": "lessp/fetch:fetch-native-lwt.json#<commit-hash>"
 }
 ```
 
