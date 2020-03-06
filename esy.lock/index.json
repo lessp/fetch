@@ -1,5 +1,5 @@
 {
-  "checksum": "d3542987c39d319889cb7b3e7acec171",
+  "checksum": "1b76a2ffae3dfb7d0269bd0d993e4aa5",
   "root": "fetch@link-dev:./esy.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#cca65f99674ed2d954d28788edeb8c57fada5ed0@d41d8cd9": {
@@ -1822,16 +1822,14 @@
       ],
       "devDependencies": []
     },
-    "@reason-native-web/ssl@github:reason-native-web/vendor:ssl.json#9383f1041a92172e2c57e7bce26a87082906cad8@d41d8cd9": {
-      "id":
-        "@reason-native-web/ssl@github:reason-native-web/vendor:ssl.json#9383f1041a92172e2c57e7bce26a87082906cad8@d41d8cd9",
+    "@reason-native-web/ssl@0.5.9-dev.2@d41d8cd9": {
+      "id": "@reason-native-web/ssl@0.5.9-dev.2@d41d8cd9",
       "name": "@reason-native-web/ssl",
-      "version":
-        "github:reason-native-web/vendor:ssl.json#9383f1041a92172e2c57e7bce26a87082906cad8",
+      "version": "0.5.9-dev.2",
       "source": {
         "type": "install",
         "source": [
-          "github:reason-native-web/vendor:ssl.json#9383f1041a92172e2c57e7bce26a87082906cad8"
+          "archive:https://registry.npmjs.org/@reason-native-web/ssl/-/ssl-0.5.9-dev.2.tgz#sha1:48192f5617d304356798a29decc88715ce27e8bb"
         ]
       },
       "overrides": [],
@@ -1840,7 +1838,7 @@
         "ocaml@4.9.0@d41d8cd9",
         "@opam/dune-configurator@opam:2.3.1@f275cf9a",
         "@opam/dune@opam:2.3.1@b10b59bf",
-        "@opam/conf-libssl@archive:https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.tar.gz#sha1:df0ee4811c87c209ebadb4e6b203d1e560d00f9a@0fabfe7a",
+        "@opam/conf-libssl@archive:https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.tar.gz#sha1:df0ee4811c87c209ebadb4e6b203d1e560d00f9a@4108b898",
         "@opam/base-unix@opam:base@87d0b2eb"
       ],
       "devDependencies": []
@@ -1858,7 +1856,7 @@
       "overrides": [],
       "dependencies": [
         "ocaml@4.9.0@d41d8cd9",
-        "@reason-native-web/ssl@github:reason-native-web/vendor:ssl.json#9383f1041a92172e2c57e7bce26a87082906cad8@d41d8cd9",
+        "@reason-native-web/ssl@0.5.9-dev.2@d41d8cd9",
         "@reason-native-web/lwt_ssl@1.1.4@d41d8cd9",
         "@reason-native-web/h2-lwt-unix@0.5.0@d41d8cd9",
         "@reason-native-web/h1-lwt-unix@1.0.0@d41d8cd9",
@@ -1884,7 +1882,7 @@
       "overrides": [],
       "dependencies": [
         "ocaml@4.9.0@d41d8cd9",
-        "@reason-native-web/ssl@github:reason-native-web/vendor:ssl.json#9383f1041a92172e2c57e7bce26a87082906cad8@d41d8cd9",
+        "@reason-native-web/ssl@0.5.9-dev.2@d41d8cd9",
         "@opam/lwt@opam:5.1.2@5717dfd1", "@opam/dune@opam:2.3.1@b10b59bf",
         "@opam/base-unix@opam:base@87d0b2eb"
       ],
@@ -3344,9 +3342,9 @@
       "dependencies": [ "@esy-ocaml/substs@0.0.1@d41d8cd9" ],
       "devDependencies": []
     },
-    "@opam/conf-libssl@archive:https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.tar.gz#sha1:df0ee4811c87c209ebadb4e6b203d1e560d00f9a@0fabfe7a": {
+    "@opam/conf-libssl@archive:https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.tar.gz#sha1:df0ee4811c87c209ebadb4e6b203d1e560d00f9a@4108b898": {
       "id":
-        "@opam/conf-libssl@archive:https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.tar.gz#sha1:df0ee4811c87c209ebadb4e6b203d1e560d00f9a@0fabfe7a",
+        "@opam/conf-libssl@archive:https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.tar.gz#sha1:df0ee4811c87c209ebadb4e6b203d1e560d00f9a@4108b898",
       "name": "@opam/conf-libssl",
       "version":
         "archive:https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.tar.gz#sha1:df0ee4811c87c209ebadb4e6b203d1e560d00f9a",
@@ -3356,7 +3354,9 @@
           "archive:https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.tar.gz#sha1:df0ee4811c87c209ebadb4e6b203d1e560d00f9a"
         ]
       },
-      "overrides": [ "esy.lock/overrides/0fabfe7aecfcad59c16daebfd3446d5b" ],
+      "overrides": [
+        "esy.lock/overrides/4108b898e4249d2037785df23c0d9d38/package.json"
+      ],
       "dependencies": [
         "@opam/conf-pkg-config@opam:1.1@5d0d3ed7",
         "@opam/conf-autoconf@github:esy-packages/esy-autoconf:package.json#fb93edf@d41d8cd9"
