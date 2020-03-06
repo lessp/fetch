@@ -1,0 +1,27 @@
+name: Windows 
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: window-latest 
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.16.1
+      - uses: actions/checkout@v1
+      - name: Install esy
+        run: npm install -g esy@latest
+      - name: Build packages
+        run: |
+          esy '@fetch-core'
+          esy '@fetch-native-lwt'
+      - name: Run esy 
+        run: esy 
+      - name: Run tests
+        run: esy test
+      - name: Run example
+        run: esy example
