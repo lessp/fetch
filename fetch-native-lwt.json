@@ -14,14 +14,13 @@
     "@opam/dune": "*",
     "@opam/reason": "*",
     "fetch-core": "0.1.0-alpha.4",
-    "@reason-native-web/piaf": "1.0.0-alpha.1"
+    "@reason-native-web/piaf": "1.0.1000"
   },
   "devDependencies": {
     "ocaml": "~4.9.0",
     "refmterr": "*"
   },
   "resolutions": {
-    "@reason-native-web/ssl": "github:reason-native-web/vendor:ssl.json#9383f1041a92172e2c57e7bce26a87082906cad8",
     "pkg-config": "lessp/pkg-config#16264492e05232f01acd4fabe7a2fe70c7ea5ad8",
     "@opam/conf-libssl": "esy-packages/esy-openssl#648930fa614886bc189f9b5c31f64f0b663fceee"
   }

@@ -1,5 +1,5 @@
 {
-  "checksum": "e79a89435980f9e2d013e23299438124",
+  "checksum": "48fc69b1ac030a7e60a2f84f730b4a98",
   "root": "fetch-native-lwt@link-dev:./fetch-native-lwt.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#cca65f99674ed2d954d28788edeb8c57fada5ed0@d41d8cd9": {
@@ -38,19 +38,21 @@
       ],
       "devDependencies": []
     },
-    "pkg-config@github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79@d41d8cd9": {
+    "pkg-config@archive:https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz#sha1:76e501663b29cb7580245720edfb6106164fad2b@14718755": {
       "id":
-        "pkg-config@github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79@d41d8cd9",
+        "pkg-config@archive:https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz#sha1:76e501663b29cb7580245720edfb6106164fad2b@14718755",
       "name": "pkg-config",
       "version":
-        "github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79",
+        "archive:https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz#sha1:76e501663b29cb7580245720edfb6106164fad2b",
       "source": {
         "type": "install",
         "source": [
-          "github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79"
+          "archive:https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz#sha1:76e501663b29cb7580245720edfb6106164fad2b"
         ]
       },
-      "overrides": [],
+      "overrides": [
+        "fetch-native-lwt.esy.lock/overrides/14718755bfcd34883c8686a6baef2f78"
+      ],
       "dependencies": [],
       "devDependencies": []
     },
@@ -167,7 +169,7 @@
       },
       "overrides": [],
       "dependencies": [
-        "pkg-config@github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79@d41d8cd9",
+        "pkg-config@archive:https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz#sha1:76e501663b29cb7580245720edfb6106164fad2b@14718755",
         "ocaml@4.9.0@d41d8cd9",
         "@opam/dune-configurator@opam:2.3.1@f275cf9a",
         "@opam/dune@opam:2.3.1@b10b59bf",
