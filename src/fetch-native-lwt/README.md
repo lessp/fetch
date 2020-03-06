@@ -14,14 +14,6 @@ Currently to install, you'll need `esy` and pin `fetch-native-lwt` to point to t
 }
 ```
 
-Depending on your platform, you may need to pin the following resolution as well:
-
-```json
-"resolutions": {
-  "@opam/conf-libssl": "esy-packages/esy-openssl#648930fa614886bc189f9b5c31f64f0b663fceee"
-}
-```
-
 2. Add Fetch to your dune libraries:
 
 ```lisp
