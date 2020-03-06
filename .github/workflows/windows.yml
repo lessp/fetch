@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: window-latest 
+    runs-on: windows-latest 
     steps:
       - uses: actions/setup-node@v1
         with:
