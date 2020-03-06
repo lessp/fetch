@@ -17,13 +17,14 @@ jobs:
           node-version: 12.16.1
       - uses: actions/checkout@v1
       - name: Install esy
-        run: npm install -g @esy-nightly/esy
+        run: npm install -g esy@latest
       - name: Build packages
         run: |
-          esy @fetch-core
-          esy @fetch-native-lwt
-          esy
-      - name: Check code formatting
+          esy '@fetch-core'
+          esy '@fetch-native-lwt'
+      - name: Run esy 
+        run: esy 
+      - if: matrix.os != 'windows-latest'
         run: esy dune build @fmt --root .
       - name: Run tests
         run: esy test
