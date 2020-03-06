@@ -12,7 +12,7 @@
     ]
   },
   "scripts": {
-    "example": "esy refmterr dune exec examples/fetch_native_lwt_get.exe",
+    "example": "esy dune exec examples/fetch_native_lwt_get.exe",
     "format": "esy dune build @fmt --auto-promote",
     "test": "esy dune exec FetchTestRunner",
     "test:watch": "esy dune runtest test --watch --force",
