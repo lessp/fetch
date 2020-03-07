@@ -9,9 +9,17 @@ Fetch client for native ReasonML.
 Currently to install, you'll need `esy` and pin `fetch-native-lwt` to point to this Github-repo.
 
 ```json
-"dependencies": {
-  "fetch-native-lwt": "lessp/fetch:fetch-native-lwt.json#<commit-hash>"
+{
+  "dependencies": {
+    "fetch-native-lwt": "lessp/fetch:fetch-native-lwt.json"
+  }
 }
+```
+
+or, to point to a specific commit:
+
+```json
+"fetch-native-lwt": "lessp/fetch:fetch-native-lwt.json#<commit-hash>"
 ```
 
 2. Add Fetch to your dune libraries:

@@ -21,6 +21,22 @@ Provides a functor for creating and providing your own Fetch-implementation. The
 
 A consumable fetch-library for ReasonML/OCaml native. Uses `Lwt` for its `Promise`-implementation.
 
+To install, add the library to your esy-manifest, like so:
+
+```json
+{
+  "dependencies": {
+    "fetch-native-lwt": "lessp/fetch:fetch-native-lwt.json"
+  }
+}
+```
+
+or, to point to a specific commit:
+
+```json
+"fetch-native-lwt": "lessp/fetch:fetch-native-lwt.json#<commit-hash>"
+```
+
 ## Contributing
 
 Feel free to open an issue and/or grabbing one of the [open issues](https://github.com/lessp/reason-fetch/issues).
