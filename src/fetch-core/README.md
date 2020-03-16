@@ -10,16 +10,4 @@ A fetch interface and implementation based on the Fetch-specification from [What
 
 The goal is to be pluggable with any HTTP or Promise-implementation provided it conforms to the common interface.
 
-E.g.
-
-```re
-module Fetch = Fetch_Core.Fetchify.Make({
-  module Response = {
-    /* your implementation */
-  };
-
-  type t = Promise.t(result(Response.t, exn));
-
-  let make = (req: Request.t) => /* your custom implementation */
-});
-```
+See [`fetch-native-lwt`]('../../fetch-native-lwt') for an example-implementation.

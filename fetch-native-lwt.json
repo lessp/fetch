@@ -8,16 +8,25 @@
     "buildDev": "refmterr dune build -p #{self.name}"
   },
   "scripts": {
-    "format": "esy dune build @fmt --auto-promote"
+    "format": "esy @#{self.name} dune build @fmt --auto-promote",
+    "doc": "esy @#{self.name} dune build @doc",
+    "doc-path": "esy @#{self.name} echo #{self.target_dir}/default/_doc/_html/index.html"
   },
   "dependencies": {
-    "@opam/dune": "*",
-    "@opam/reason": "*",
-    "fetch-core": "0.1.0-alpha.4",
-    "@reason-native-web/piaf": "1.0.1000"
+    "fetch-core": "*",
+    "@esy-ocaml/reason": ">=3.3.2",
+    "@opam/dune": ">=2.0.1",
+    "@reason-native-web/piaf": "1.0.1002",
+    "ocaml": ">=4.8.0"
   },
   "devDependencies": {
+    "@opam/merlin": "*",
+    "@reason-native/rely": "*",
+    "refmterr": "*",
     "ocaml": "~4.9.0",
-    "refmterr": "*"
+    "@opam/odoc": "*"
+  },
+  "resolutions": {
+    "fetch-core": "link:./fetch-core.json"
   }
 }
