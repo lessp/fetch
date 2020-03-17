@@ -11,3 +11,7 @@ A fetch interface and implementation based on the Fetch-specification from [What
 The goal is to be pluggable with any HTTP or Promise-implementation provided it conforms to the common interface.
 
 See [`fetch-native-lwt`]('../../fetch-native-lwt') for an example-implementation.
+
+## Credits
+
+The implementation is largely inspired from [@aantron's](https://github.com/aantron) efforts in "Promisifying" [luv](https://github.com/aantron/luv).
