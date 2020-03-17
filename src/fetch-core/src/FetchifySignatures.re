@@ -34,7 +34,7 @@ module type FETCH = {
 module type FETCHIFIED = {
   type promise('a);
   type result('a, 'error);
-  
+
   module Status: (module type of Status);
   module Headers: (module type of Headers);
   module Request: (module type of Request);
@@ -43,7 +43,18 @@ module type FETCHIFIED = {
   module Body: {
     type t;
 
+    /** Takes a Body.t and returns a promise that resolves to a string.
+
+        {2 Examples}
+        {[Fetch.Body.toString(body) == Promise.t(string)]}
+    */
     let toString: t => promise(string);
+
+    /** Takes a string and returns Body.t.
+
+        {2 Examples}
+        {[Fetch.Body.ofString("Some, body") == Body.t]}
+    */
     let ofString: string => t;
   };
 
@@ -56,6 +67,19 @@ module type FETCHIFIED = {
     };
   };
 
+  /** Make a fetch-request with a [body] (optional), [headers] (optional), [method] (defaults to
+   * `GET) to endpoint [url].
+
+      {2 Examples}
+      {[Fetch.fetch("https://example.com")]}
+      {[
+        Fetch.fetch(
+          "https://example.com",
+          ~body="Some, body",
+          ~headers=[("Authorization", "Bearer xyz")],
+          ~meth=`POST)
+      ]}
+  */
   let fetch:
     (
       ~body: string=?,
@@ -65,15 +89,61 @@ module type FETCHIFIED = {
     ) =>
     promise(result(Response.t, string));
 
+  /** Make a GET-request with a [body] (optional), [headers] (optional) to endpoint [url].
+
+      {2 Examples}
+      {[Fetch.get("https://example.com")]}
+      {[
+        Fetch.get(
+          "https://example.com",
+          ~headers=[("Authorization", "Bearer xyz")],
+        )
+      ]}
+  */
   let get:
     (~body: string=?, ~headers: list(Headers.t)=?, string) =>
     promise(result(Response.t, string));
+
+  /** Make a POST-request with a [body] (optional), [headers] (optional) to endpoint [url].
+
+      {2 Examples}
+      {[
+        Fetch.post(
+          "https://example.com",
+          ~body="Some, body",
+          ~headers=[("Authorization", "Bearer xyz")],
+        )
+      ]}
+  */
   let post:
     (~body: string=?, ~headers: list(Headers.t)=?, string) =>
     promise(result(Response.t, string));
+
+  /** Make a PUT-request with a [body] (optional), [headers] (optional) to endpoint [url].
+
+      {2 Examples}
+      {[
+        Fetch.put(
+          "https://example.com/movies/1",
+          ~body="Some, body",
+          ~headers=[("Authorization", "Bearer xyz")],
+        )
+      ]}
+  */
   let put:
     (~body: string=?, ~headers: list(Headers.t)=?, string) =>
     promise(result(Response.t, string));
+
+  /** Make a DELETE-request with a [body] (optional), [headers] (optional) to endpoint [url].
+
+      {2 Examples}
+      {[
+        Fetch.delete(
+          "https://example.com/movies/1",
+          ~headers=[("Authorization", "Bearer xyz")],
+        )
+      ]}
+  */
   let delete:
     (~body: string=?, ~headers: list(Headers.t)=?, string) =>
     promise(result(Response.t, string));
