@@ -15,7 +15,11 @@ open LetOperators;
 let result =
   Fetch.(
     {
-      let.flatMapOk {Response.body, _} = get("https://httpbin.org/get");
+      let.flatMapOk {Response.body, _} =
+        get(
+          "https://httpbin.org/get",
+          ~headers=[("Authorisation", "Bearer xyz")],
+        );
       let.flatMap bodyString = Body.toString(body);
 
       Lwt.return(Ok(bodyString));
@@ -25,5 +29,5 @@ let result =
 
 switch (result) {
 | Ok(body) => Console.log("Body: " ++ body)
-| Error(e) => Console.log("That's an error: " ++ e)
+| Error(errorMsg) => Console.log("That's an error: " ++ errorMsg)
 };

@@ -1,10 +1,9 @@
 module type FETCH = {
   type promise('a);
+  type result('a, 'error);
 
   module Body: {
     type t;
-
-    let empty: unit => t;
 
     let toString: t => promise(string);
     let ofString: string => t;
@@ -34,6 +33,8 @@ module type FETCH = {
 
 module type FETCHIFIED = {
   type promise('a);
+  type result('a, 'error);
+  
   module Status: (module type of Status);
   module Headers: (module type of Headers);
   module Request: (module type of Request);

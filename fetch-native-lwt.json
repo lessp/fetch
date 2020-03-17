@@ -10,7 +10,9 @@
   "scripts": {
     "format": "esy @#{self.name} dune build @fmt --auto-promote",
     "doc": "esy @#{self.name} dune build @doc",
-    "doc-path": "esy @#{self.name} echo #{self.target_dir}/default/_doc/_html/index.html"
+    "doc-path": "esy @#{self.name} echo #{self.target_dir}/default/_doc/_html/index.html",
+    "example:get": "esy @#{self.name} b dune exec src/fetch-native-lwt/examples/Fetch_Lwt.exe",
+    "example:isSuccessful": "esy @#{self.name} b dune exec src/fetch-native-lwt/examples/Fetch_Lwt_Successful.exe"
   },
   "dependencies": {
     "fetch-core": "*",
@@ -20,11 +22,13 @@
     "ocaml": ">=4.8.0"
   },
   "devDependencies": {
+    "@esy-ocaml/reason": ">=3.6.0",
     "@opam/merlin": "*",
+    "@opam/odoc": "*",
+    "@reason-native/console": "0.1.0",
     "@reason-native/rely": "*",
-    "refmterr": "*",
     "ocaml": "~4.9.0",
-    "@opam/odoc": "*"
+    "refmterr": "*"
   },
   "resolutions": {
     "fetch-core": "link:./fetch-core.json"

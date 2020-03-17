@@ -1,5 +1,5 @@
 {
-  "checksum": "101e9f87095bb329818ef589615a215e",
+  "checksum": "93be0777b080c30ebc2c5715852e14ca",
   "root": "fetch-native-lwt@link-dev:./fetch-native-lwt.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#cca65f99674ed2d954d28788edeb8c57fada5ed0@d41d8cd9": {
@@ -86,7 +86,9 @@
       "devDependencies": [
         "refmterr@3.3.0@d41d8cd9", "ocaml@4.9.0@d41d8cd9",
         "@reason-native/rely@3.2.1@d41d8cd9",
-        "@opam/odoc@opam:1.5.0@35218f5f", "@opam/merlin@opam:3.3.3@d653b06a"
+        "@reason-native/console@0.1.0@d41d8cd9",
+        "@opam/odoc@opam:1.5.0@35218f5f", "@opam/merlin@opam:3.3.3@d653b06a",
+        "@esy-ocaml/reason@3.6.0@d41d8cd9"
       ]
     },
     "fetch-core@link:./fetch-core.json": {

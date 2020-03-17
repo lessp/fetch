@@ -5,13 +5,12 @@ module FetchImplementation = {
   module Request = Fetch_Core.Request;
 
   type promise('a) = Lwt.t('a);
+  type result('a, 'error) = Result.t('a, 'error);
 
   module Body = {
     type t = Piaf.Body.t;
 
     let make = body => body;
-
-    let empty = () => Piaf.Body.empty;
 
     let toString = body => Piaf.Body.to_string(body);
     let ofString = body => Piaf.Body.of_string(body);
@@ -66,7 +65,8 @@ module FetchImplementation = {
                       Piaf.Response.status(response) |> Piaf.Status.to_code,
                     ),
                   ~body=Body.make(Piaf.Response.body(response)),
-                  ~headers,
+                  ~headers=
+                    Piaf.Response.headers(response) |> Piaf.Headers.to_list,
                   ~url,
                 ),
               ),
