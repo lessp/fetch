@@ -4,7 +4,7 @@ module LetOperators = {
       promise,
       fun
       | Ok(response) => fn(response)
-      | Error(e) => Promise.resolved(Error(e)),
+      | Error(e) => Promise.resolved(Belt.Result.Error(e)),
     );
 
   let (let.flatMap) = (promise, fn) => Promise.flatMap(promise, fn);
@@ -15,7 +15,6 @@ open LetOperators;
 Fetch_Js.(
   {
     let.flatMapOk {Response.body, _} = get("https://httpbin.org/get");
-
     Js.log(Body.toString(body));
 
     Promise.resolved(Ok());
@@ -63,7 +62,6 @@ Fetch_Js.(
         ],
         ~body=Js.Json.stringify(jsonBody),
       );
-
     Js.log2("Parse JSON: ", Body.toString(body)->Js.Json.parseExn);
 
     Promise.resolved(Ok());
