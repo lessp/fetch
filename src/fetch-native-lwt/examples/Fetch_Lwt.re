@@ -20,7 +20,7 @@ let result =
           "https://httpbin.org/get",
           ~headers=[("Authorisation", "Bearer xyz")],
         );
-      let.flatMap bodyString = Body.toString(body);
+      let bodyString = Body.toString(body);
 
       Lwt.return(Ok(bodyString));
     }

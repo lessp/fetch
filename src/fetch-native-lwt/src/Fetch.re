@@ -8,12 +8,12 @@ module FetchImplementation = {
   type result('a, 'error) = Result.t('a, 'error);
 
   module Body = {
-    type t = Piaf.Body.t;
+    type t = string;
 
     let make = body => body;
 
-    let toString = body => Piaf.Body.to_string(body);
-    let ofString = body => Piaf.Body.of_string(body);
+    let toString = body => body;
+    let ofString = body => make(body);
   };
 
   module Response = {
@@ -57,19 +57,26 @@ module FetchImplementation = {
         res =>
           switch (res) {
           | Ok(response) =>
-            Lwt.return(
-              Ok(
-                Response.make(
-                  ~status=
-                    Status.make(
-                      Piaf.Response.status(response) |> Piaf.Status.to_code,
+            Piaf.Response.body(response)
+            |> Piaf.Body.to_string
+            >>= (
+              body =>
+                Lwt.return(
+                  Ok(
+                    Response.make(
+                      ~status=
+                        Status.make(
+                          Piaf.Response.status(response)
+                          |> Piaf.Status.to_code,
+                        ),
+                      ~body=Body.make(body),
+                      ~headers=
+                        Piaf.Response.headers(response)
+                        |> Piaf.Headers.to_list,
+                      ~url,
                     ),
-                  ~body=Body.make(Piaf.Response.body(response)),
-                  ~headers=
-                    Piaf.Response.headers(response) |> Piaf.Headers.to_list,
-                  ~url,
-                ),
-              ),
+                  ),
+                )
             )
           | Error(error) => Lwt.return(Error(error))
           }

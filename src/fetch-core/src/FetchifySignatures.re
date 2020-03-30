@@ -5,7 +5,7 @@ module type FETCH = {
   module Body: {
     type t;
 
-    let toString: t => promise(string);
+    let toString: t => string;
     let ofString: string => t;
   };
 
@@ -43,12 +43,12 @@ module type FETCHIFIED = {
   module Body: {
     type t;
 
-    /** Takes a Body.t and returns a promise that resolves to a string.
+    /** Takes a Body.t and returns a string.
 
         {2 Examples}
-        {[Fetch.Body.toString(body) == Promise.t(string)]}
+        {[Fetch.Body.toString(body) == string]}
     */
-    let toString: t => promise(string);
+    let toString: t => string;
 
     /** Takes a string and returns Body.t.
 
