@@ -1,14 +1,15 @@
-include S;
+include FetchifySignatures;
 
-module Make =
-       (IO: IO)
-       : (FETCH with type t := IO.t and module Response = IO.Response) => {
-  module Response = IO.Response;
-  module Method = Method;
+module CreateFetchImplementation = (ProvidedFetch: FETCH) => {
   module Headers = Headers;
+  module Status = Status;
+  module Method = Method;
+  module Request = Request;
 
-  let fetch = (~body=?, ~headers=[], ~meth=`GET, url) =>
-    Request.create(~body, ~headers, ~meth, ~url) |> IO.make;
+  module Body = ProvidedFetch.Body;
+  module Response = ProvidedFetch.Response;
+
+  let fetch = ProvidedFetch.fetch;
 
   let get = fetch(~meth=`GET);
   let post = fetch(~meth=`POST);

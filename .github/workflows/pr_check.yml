@@ -18,15 +18,19 @@ jobs:
       - uses: actions/checkout@v1
       - name: Install esy
         run: npm install -g esy@latest
-      - name: Build packages
-        run: |
-          esy '@fetch-core'
-          esy '@fetch-native-lwt'
-      - name: Run esy 
-        run: esy 
+
+      # Fetch Core
+      - name: esy '@fetch-core'
+        run: esy '@fetch-core'
       - if: matrix.os != 'windows-latest'
-        run: esy dune build @fmt --root .
-      - name: Run tests
-        run: esy test
-      - name: Run example
-        run: esy example
+        run: esy '@fetch-core' test
+      - if: matrix.os != 'windows-latest'
+        run: esy '@fetch-core' format
+
+      # Fetch Native Lwt
+      - name: esy '@fetch-native-lwt'
+        run: esy '@fetch-native-lwt'
+      - if: matrix.os != 'windows-latest'
+        run: esy '@fetch-native-lwt' format
+      - name: esy '@fetch-native-lwt' example:get
+        run: esy '@fetch-native-lwt' example:get

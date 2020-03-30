@@ -8,14 +8,18 @@
     "buildDev": "refmterr dune build -p #{self.name}"
   },
   "scripts": {
-    "format": "esy dune build @fmt --auto-promote"
+    "format": "esy @#{self.name} dune build @fmt --auto-promote",
+    "test": "esy @#{self.name} dune exec FetchTestRunner",
+    "test:watch": "esy @#{self.name} dune runtest test --watch --force"
   },
   "dependencies": {
     "@opam/dune": "*",
-    "@opam/reason": "*"
+    "@esy-ocaml/reason": "*",
+    "ocaml": ">=4.8.0"
   },
   "devDependencies": {
     "ocaml": "~4.9.0",
-    "refmterr": "*"
+    "refmterr": "*",
+    "@reason-native/rely": "3.2.1"
   }
 }
