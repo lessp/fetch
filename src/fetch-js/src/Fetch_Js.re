@@ -9,27 +9,13 @@ module FetchImplementation = {
   type result('a, 'error) = Belt.Result.t('a, 'error);
 
   module Body = {
-    type t = Js.Promise.t(string);
+    type t = string;
 
-    let make = response => {
-      let body = BsFetch.Bs_Fetch.Response.text(response);
-      body;
-    };
+    let make = body => body;
 
-    let toString = body => {
-      let (promise, resolve) = Promise.pending();
+    let toString = body => body;
 
-      body
-      |> Js.Promise.then_(body => {
-           resolve(body);
-           Js.Promise.resolve();
-         })
-      |> ignore;
-
-      promise;
-    };
-
-    let ofString = body => Js.Promise.resolve(body);
+    let ofString = body => make(body);
   };
 
   module Response = {
@@ -90,18 +76,23 @@ module FetchImplementation = {
       ),
     )
     |> Js.Promise.then_(response => {
-         resolve(
-           Ok(
-             Response.make(
-               ~status=
-                 Status.make(BsFetch.Bs_Fetch.Response.status(response)),
-               ~body=Body.make(response),
-               ~headers,
-               ~url,
-             ),
-           ),
-         );
-         Js.Promise.resolve();
+         BsFetch.Bs_Fetch.Response.text(response)
+         |> Js.Promise.then_(body => {
+              resolve(
+                Ok(
+                  Response.make(
+                    ~status=
+                      Status.make(
+                        BsFetch.Bs_Fetch.Response.status(response),
+                      ),
+                    ~body=Body.make(body),
+                    ~headers,
+                    ~url,
+                  ),
+                ),
+              );
+              Js.Promise.resolve();
+            })
        })
     |> Js.Promise.catch(error =>
          Js.Promise.resolve(resolve(Error(Js.String.make(error))))

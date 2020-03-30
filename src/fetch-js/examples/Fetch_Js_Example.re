@@ -1,3 +1,27 @@
+module LetOperators = {
+  let (let.flatMapOk) = (promise, fn) =>
+    Promise.flatMap(
+      promise,
+      fun
+      | Ok(response) => fn(response)
+      | Error(e) => Promise.resolved(Error(e)),
+    );
+
+  let (let.flatMap) = (promise, fn) => Promise.flatMap(promise, fn);
+};
+
+open LetOperators;
+
+Fetch_Js.(
+  {
+    let.flatMapOk {Response.body, _} = get("https://httpbin.org/get");
+
+    Js.log(Body.toString(body));
+
+    Promise.resolved(Ok());
+  }
+);
+
 Fetch_Js.(
   get("https://httpbin.org/get")
   ->Promise.map(
@@ -16,7 +40,7 @@ Fetch_Js.(
   )
   ->Promise.flatMap(
       fun
-      | Ok({Response.body, _}) => Body.toString(body)
+      | Ok({Response.body, _}) => Body.toString(body)->Promise.resolved
       | Error(errorMsg) => errorMsg->Promise.resolved,
     )
   ->Promise.map(Js.log)
@@ -39,7 +63,7 @@ Fetch_Js.(
   )
   ->Promise.flatMap(
       fun
-      | Ok({Response.body, _}) => Body.toString(body)
+      | Ok({Response.body, _}) => Body.toString(body)->Promise.resolved
       | Error(errorMsg) => errorMsg->Promise.resolved,
     )
   ->Promise.map(Js.log)

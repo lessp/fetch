@@ -11,11 +11,8 @@
   "dependencies": {
     "bs-fetch": "../bs-fetch",
     "reason-promise": "^1.0.2",
-    "bs-platform": "latest",
+    "bs-platform": "jaredly/bucklescript#letop",
     "isomorphic-fetch": "^2.2.1"
-  },
-  "devDependencies": {
-    "bs-platform": "latest"
   },
   "peerDependencies": {
     "bs-platform": ">= 5.0.0"
