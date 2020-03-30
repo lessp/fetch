@@ -22,6 +22,7 @@
     "ocaml": ">=4.8.0"
   },
   "devDependencies": {
+    "fetch-core": "*",
     "@esy-ocaml/reason": ">=3.6.0",
     "@opam/merlin": "*",
     "@opam/odoc": "*",

@@ -1,6 +1,6 @@
 {
   "name": "fetch-core",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0-alpha.5",
   "description": "A fetch interface/functor for ReasonML/OCaml",
   "license": "MIT",
   "esy": {
@@ -9,8 +9,8 @@
   },
   "scripts": {
     "format": "esy @#{self.name} dune build @fmt --auto-promote",
-    "test": "esy @#{self.name} dune exec FetchTestRunner",
-    "test:watch": "esy @#{self.name} dune runtest test --watch --force"
+    "test": "esy @#{self.name} b dune exec FetchTestRunner",
+    "test:watch": "esy @#{self.name} b dune runtest test --watch --force"
   },
   "dependencies": {
     "@opam/dune": "*",
