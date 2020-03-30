@@ -53,18 +53,19 @@ let jsonBody = Js.Json.parseExn({|
 |});
 
 Fetch_Js.(
-  post(
-    "https://httpbin.org/post",
-    ~headers=[
-      ("Authorization", "Bearer xyz"),
-      ("content-type", "application/json"),
-    ],
-    ~body=Js.Json.stringify(jsonBody),
-  )
-  ->Promise.flatMap(
-      fun
-      | Ok({Response.body, _}) => Body.toString(body)->Promise.resolved
-      | Error(errorMsg) => errorMsg->Promise.resolved,
-    )
-  ->Promise.map(Js.log)
+  {
+    let.flatMapOk {Response.body, _} =
+      post(
+        "https://httpbin.org/post",
+        ~headers=[
+          ("Authorization", "Bearer xyz"),
+          ("content-type", "application/json"),
+        ],
+        ~body=Js.Json.stringify(jsonBody),
+      );
+
+    Js.log2("Parse JSON: ", Body.toString(body)->Js.Json.parseExn);
+
+    Promise.resolved(Ok());
+  }
 );
