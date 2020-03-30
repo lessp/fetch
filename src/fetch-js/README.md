@@ -13,7 +13,7 @@ Fetch_Js.(
   )
   ->Promise.flatMap(
       fun
-      | Ok({Response.body, _}) => Body.toString(body)
+      | Ok({Response.body, _}) => Body.toString(body)->Promise.resolved
       | Error(errorMsg) => errorMsg->Promise.resolved,
     )
   ->Promise.map(Js.log)
