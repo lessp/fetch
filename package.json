@@ -9,7 +9,7 @@
     "example": "bsb -make-world && node src/fetch-js/examples/Fetch_Js_Example.bs.js"
   },
   "dependencies": {
-    "bs-fetch": "../bs-fetch",
+    "bs-fetch": "lessp/bs-fetch#758b764",
     "reason-promise": "^1.0.2",
     "bs-platform": "jaredly/bucklescript#letop",
     "isomorphic-fetch": "^2.2.1"
