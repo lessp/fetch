@@ -19,8 +19,6 @@ jobs:
       # Fetch Core
       - name: esy '@fetch-core'
         run: esy '@fetch-core'
-      - name: esy '@fetch-core' test
-        run: esy '@fetch-core' test
 
       # Fetch Native Lwt
       - name: esy '@fetch-native-lwt'
