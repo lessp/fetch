@@ -7,10 +7,16 @@ jobs:
   build-and-deploy-docs:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.16.1
       - name: Checkout
         uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
         with:
           persist-credentials: false
+
+      - name: Install esy
+        run: npm install -g esy@latest
 
       - name: Install and build docs
         run: |
