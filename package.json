@@ -6,7 +6,7 @@
     "clean": "bsb -clean-world",
     "build": "bsb -make-world",
     "watch": "bsb -make-world -w",
-    "example": "bsb -make-world && node src/fetch-js/examples/Fetch_Js_Example.bs.js"
+    "example": "bsb -make-world && node src/fetch-js/examples/WithLetOperators.bs.js"
   },
   "dependencies": {
     "bs-fetch": "lessp/bs-fetch#758b764",
