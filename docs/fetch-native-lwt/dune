@@ -1,3 +1,0 @@
-(documentation
- (package fetch-native-lwt)
- (mld_files (:standard)))

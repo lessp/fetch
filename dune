@@ -1,3 +1,0 @@
-(dirs :standard \ fetch-js)
-
-;; include all directories except fetch-js 

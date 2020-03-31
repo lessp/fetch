@@ -1,4 +1,0 @@
-(library
- (name Fetch)
- (public_name fetch-native-lwt)
- (libraries fetch-core piaf))

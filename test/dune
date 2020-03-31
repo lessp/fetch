@@ -1,5 +1,0 @@
-(executable
- (name TestRunner)
- (public_name FetchTestRunner)
- (package fetch-test)
- (libraries Fetch_Core_Test))

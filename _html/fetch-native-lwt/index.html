@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>index (fetch-native-lwt.index)</title><link rel="stylesheet" href="../odoc.css"/><meta charset="utf-8"/><meta name="generator" content="odoc 1.5.0"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><div class="content"><header><nav><a href="../index.html">Up</a> – fetch-native-lwt</nav><h1 id="fetch"><a href="#fetch" class="anchor"></a>Fetch</h1><p>An HTTP-client, built on the Fetch-standard using <a href="https://github.com/ocsigen/lwt">Lwt</a> for its Promise-implementation.</p><p>The entry point of this library is the module: <a href="Fetch/index.html"><code>Fetch</code></a>.</p><nav class="toc"><ul><li><a href="#examples">Examples</a><ul><li><a href="#basic-request">Basic request</a></li><li><a href="#post-request">POST-Request</a></li></ul></li><li><a href="#installing">Installing</a></li></ul></nav></header><h2 id="examples"><a href="#examples" class="anchor"></a>Examples</h2><h3 id="basic-request"><a href="#basic-request" class="anchor"></a>Basic request</h3><p>The following example performs a GET-request.</p><pre><code class="ml">Fetch.get(&quot;https://example.com&quot;) == Lwt.t(result(Fetch.Response.t, string));</code></pre><p>We could also use the following example to perform a `GET-request since <a href="Fetch/index.html#val-fetch"><code>Fetch.fetch</code></a> defaults to a `GET-request. But prefer the former since it's more explicit in showing intent.</p><pre><code class="ml">Fetch.fetch(&quot;https://example.com&quot;) == Lwt.t(result(Fetch.Response.t, string));</code></pre><h3 id="post-request"><a href="#post-request" class="anchor"></a>POST-Request</h3><p>Here's an example that's a bit more involved. We're not using any of the destructured fields from <a href="Fetch/Response/index.html#type-t"><code>Fetch.Response.t</code></a>, but it's important to know that they're available.</p><pre><code class="ml">let result =
+  Fetch.(
+    {
+      let.flatMapOk {Response.body, headers as _headers, status as _status, url as _url} =
+        post(
+          &quot;https://example.com/movies&quot;,
+          ~body=&quot;Some, body&quot;,
+          ~headers=[(&quot;Authorization&quot;, &quot;Bearer xyz&quot;)],
+        );
+
+      let bodyString = Body.toString(body);
+
+      Lwt.return(Ok(bodyString));
+    }
+  );
+
+switch (result) {
+  | Ok(bodyString) =&gt; ...
+  | Error(errorMessage) =&gt; ...
+};</code></pre><p>For more examples, have a look in the <a href="https://github.com/lessp/fetch/tree/master/src/fetch-native-lwt/examples">examples folder</a></p><h2 id="installing"><a href="#installing" class="anchor"></a>Installing</h2><p>To install, add the package to your <a href="https://esy.sh">esy-manifest</a> like so:</p><pre><code class="ml">&quot;dependencies&quot;: {
+  /* other dependencies */
+  &quot;fetch-native-lwt&quot;: &quot;lessp/fetch:fetch-native-lwt.json&quot;
+}</code></pre><p>And add it to your `dune`-stanza.</p><pre><code class="ml">(libraries ... fetch-native-lwt)</code></pre><p>In your terminal, run: `esy`.</p></div></body></html>
