@@ -5,7 +5,7 @@ module FetchImplementation = {
   module Request = Fetch_Core.Request;
 
   type promise('a) = Lwt.t('a);
-  type result('a, 'error) = Result.t('a, 'error);
+  type result('a, 'error) = Stdlib.Result.t('a, 'error);
 
   module Body = {
     type t = string;
