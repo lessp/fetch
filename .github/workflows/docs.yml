@@ -1,0 +1,28 @@
+name: Build and deploy docs 
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        with:
+          persist-credentials: false
+
+      - name: Install and build docs
+        run: |
+          esy @fetch-core 
+          esy @fetch-native-lwt
+          esy @fetch-native-lwt doc
+          esy @fetch-native-lwt docs:build
+          cp docs/index.html build/index.html
+
+      - name: Deploy to gh-pages 
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build

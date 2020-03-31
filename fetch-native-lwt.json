@@ -10,7 +10,8 @@
   "scripts": {
     "format": "esy @#{self.name} dune build @fmt --auto-promote",
     "doc": "esy @#{self.name} dune build @doc --only-packages=fetch-core,fetch-native-lwt",
-    "doc-path": "esy @#{self.name} echo #{self.target_dir}/default/_doc/_html/index.html",
+    "doc-path": "esy @#{self.name} echo #{self.target_dir}/default/_doc/_html",
+    "docs:build": "esy @#{self.name} mv #{self.target_dir}/default/_doc/_html ./build",
     "example:get": "esy @#{self.name} b dune exec src/fetch-native-lwt/examples/Fetch_Lwt.exe",
     "example:isSuccessful": "esy @#{self.name} b dune exec src/fetch-native-lwt/examples/Fetch_Lwt_Successful.exe"
   },
