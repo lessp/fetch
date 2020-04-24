@@ -1,6 +1,6 @@
 {
   "name": "fetch-native-lwt",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "Fetch client (Lwt) for native ReasonML/OCaml",
   "license": "MIT",
   "esy": {
@@ -19,10 +19,10 @@
     "example:isSuccessful": "esy @#{self.name} b dune exec src/fetch-native-lwt/examples/Fetch_Lwt_Successful.exe"
   },
   "dependencies": {
-    "fetch-core": "0.1.0-alpha.5",
+    "fetch-core": ">=0.1.0-alpha.5",
     "@esy-ocaml/reason": ">=3.3.2",
     "@opam/dune": ">=2.0.1",
-    "@reason-native-web/piaf": "1.0.1002",
+    "@reason-native-web/piaf": ">=1.0.2000",
     "ocaml": ">=4.8.0"
   },
   "devDependencies": {
@@ -36,7 +36,6 @@
     "refmterr": "*"
   },
   "resolutions": {
-    "fetch-core": "link:./fetch-core.json",
-    "@reason-native-web/ssl": "0.5.9007"
+    "fetch-core": "link:./fetch-core.json"
   }
 }
