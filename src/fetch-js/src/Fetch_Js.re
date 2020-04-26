@@ -1,5 +1,22 @@
 [%bs.raw {| require("isomorphic-fetch") |}];
 
+let decodeRequestMethod = meth => {
+  let methStringified = Method.toString(meth);
+
+  switch (methStringified) {
+  | "GET" => BsFetch.Bs_Fetch.Get
+  | "HEAD" => Head
+  | "POST" => Post
+  | "PUT" => Put
+  | "DELETE" => Delete
+  | "CONNECT" => Connect
+  | "OPTIONS" => Options
+  | "TRACE" => Trace
+  | "PATCH" => Patch
+  | otherMethod => Other(otherMethod)
+  };
+};
+
 module FetchImplementation = {
   module Headers = Fetch_Core.Headers;
   module Method = Fetch_Core.Method;
@@ -42,23 +59,6 @@ module FetchImplementation = {
       Fetch_Core.Request.create(~body, ~headers, ~meth, ~url);
 
     let (promise, resolve) = Promise.pending();
-
-    let decodeRequestMethod = meth => {
-      let methStringified = Method.toString(meth);
-
-      switch (methStringified) {
-      | "GET" => BsFetch.Bs_Fetch.Get
-      | "HEAD" => Head
-      | "POST" => Post
-      | "PUT" => Put
-      | "DELETE" => Delete
-      | "CONNECT" => Connect
-      | "OPTIONS" => Options
-      | "TRACE" => Trace
-      | "PATCH" => Patch
-      | otherMethod => Other(otherMethod)
-      };
-    };
 
     BsFetch.Bs_Fetch.fetchWithInit(
       url,
