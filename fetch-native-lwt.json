@@ -1,24 +1,28 @@
 {
   "name": "fetch-native-lwt",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.3",
   "description": "Fetch client (Lwt) for native ReasonML/OCaml",
   "license": "MIT",
   "esy": {
     "build": "dune build -p #{self.name}",
-    "buildDev": "refmterr dune build -p #{self.name}"
+    "buildDev": "refmterr dune build -p #{self.name}",
+    "buildEnv": {
+      "ODOC_SYNTAX": "re"
+    }
   },
   "scripts": {
     "format": "esy @#{self.name} dune build @fmt --auto-promote",
     "doc": "esy @#{self.name} dune build @doc --only-packages=fetch-core,fetch-native-lwt",
-    "doc-path": "esy @#{self.name} echo #{self.target_dir}/default/_doc/_html/index.html",
+    "doc-path": "esy @#{self.name} echo #{self.target_dir}/default/_doc/_html",
+    "docs:build": "esy @#{self.name} mv #{self.target_dir}/default/_doc/_html ./build",
     "example:get": "esy @#{self.name} b dune exec src/fetch-native-lwt/examples/Fetch_Lwt.exe",
     "example:isSuccessful": "esy @#{self.name} b dune exec src/fetch-native-lwt/examples/Fetch_Lwt_Successful.exe"
   },
   "dependencies": {
-    "fetch-core": "0.1.0-alpha.5",
+    "fetch-core": ">=0.1.0-alpha.5",
     "@esy-ocaml/reason": ">=3.3.2",
     "@opam/dune": ">=2.0.1",
-    "@reason-native-web/piaf": "1.0.1002",
+    "@reason-native-web/piaf": ">=1.0.2000",
     "ocaml": ">=4.8.0"
   },
   "devDependencies": {

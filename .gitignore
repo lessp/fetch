@@ -3,6 +3,7 @@
 .env
 .merlin
 node_modules/
+build/
 _build
 _esy
 _release
