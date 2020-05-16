@@ -1,6 +1,6 @@
 {
   "name": "fetch-native-lwt",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0-alpha.4",
   "description": "Fetch client (Lwt) for native ReasonML/OCaml",
   "license": "MIT",
   "esy": {
@@ -33,7 +33,8 @@
     "@reason-native/console": "0.1.0",
     "@reason-native/rely": "*",
     "ocaml": "~4.9.0",
-    "refmterr": "*"
+    "refmterr": "*",
+    "@opam/ocaml-lsp-server": "ocaml/ocaml-lsp:ocaml-lsp-server.opam"
   },
   "resolutions": {
     "fetch-core": "link:./fetch-core.json"
