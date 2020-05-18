@@ -57,28 +57,27 @@ module FetchImplementation = {
         res =>
           switch (res) {
           | Ok(response) =>
-            Piaf.Response.body(response)
+            response.body
             |> Piaf.Body.to_string
             >>= (
-              body =>
-                Lwt.return(
-                  Ok(
-                    Response.make(
-                      ~status=
-                        Status.make(
-                          Piaf.Response.status(response)
-                          |> Piaf.Status.to_code,
-                        ),
-                      ~body=Body.make(body),
-                      ~headers=
-                        Piaf.Response.headers(response)
-                        |> Piaf.Headers.to_list,
-                      ~url,
+              fun
+              | Ok(body) => {
+                  Lwt.return(
+                    Ok(
+                      Response.make(
+                        ~status=
+                          Status.make(Piaf.Status.to_code(response.status)),
+                        ~body=Body.make(body),
+                        ~headers=response.headers |> Piaf.Headers.to_list,
+                        ~url,
+                      ),
                     ),
-                  ),
-                )
+                  );
+                }
+              | Error(error) =>
+                Lwt.return(Error(Piaf.Error.to_string(error)))
             )
-          | Error(error) => Lwt.return(Error(error))
+          | Error(error) => Lwt.return(Error(Piaf.Error.to_string(error)))
           }
       )
     );
