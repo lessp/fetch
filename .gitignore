@@ -10,3 +10,8 @@ _release
 *.byte
 *.native
 *.install
+
+# BuckleScript
+
+lib/
+*.bs.js

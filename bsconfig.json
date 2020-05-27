@@ -1,0 +1,23 @@
+{
+  "name": "Fetch",
+  "namespace": true,
+  "sources": [
+    {
+      "dir": "src/fetch-js",
+      "subdirs": true
+    },
+    {
+      "dir": "src/fetch-core",
+      "subdirs": true
+    }
+  ],
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "refmt": 3,
+  "suffix": ".bs.js",
+  "generate-merlin": true,
+  "bs-dev-dependencies": ["bs-fetch", "reason-promise"],
+  "bs-dependencies": ["bs-fetch", "reason-promise"]
+}

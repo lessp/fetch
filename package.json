@@ -1,0 +1,25 @@
+{
+  "name": "fetch-js",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "clean": "bsb -clean-world",
+    "build": "bsb -make-world",
+    "watch": "bsb -make-world -w",
+    "example": "bsb -make-world && node src/fetch-js/examples/WithLetOperators.bs.js"
+  },
+  "dependencies": {
+    "bs-fetch": "lessp/bs-fetch#758b764",
+    "reason-promise": "^1.0.2",
+    "bs-platform": "jaredly/bucklescript#letop",
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "peerDependencies": {
+    "bs-platform": ">= 5.0.0"
+  },
+  "files": [
+    "src/fetch-js/Fetch.rei",
+    "src/fetch-js/Fetch.re",
+    "bsconfig.json"
+  ]
+}
